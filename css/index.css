@@ -1,0 +1,901 @@
+/*这个注释会被编译到css文件中*/
+/*body背景的设置*/
+body {
+  background: url("../img/bg/bg-left.png") no-repeat, url("../img/bg/bg-right.png") no-repeat calc(100% + 210px) top;
+  background-color: #f2f2f2;
+  background-attachment: fixed;
+  /*小于980的样式*/
+}
+@media screen and (max-width: 980px) {
+  body {
+    background-image: none;
+  }
+}
+/*root基础样式的设置*/
+#root {
+  max-width: 1240px;
+  width: 100%;
+  margin: 0 auto;
+}
+/*header区域*/
+#header {
+  overflow: hidden;
+  width: 100%;
+  height: 100px;
+  /*小于980的样式*/
+}
+@media screen and (max-width: 980px) {
+  #header {
+    background-color: #fff;
+  }
+}
+#header img {
+  display: block;
+  float: left;
+  width: 60px;
+  height: 60px;
+  margin-left: 350px;
+  margin-top: 15px;
+  /*小于980的样式*/
+}
+@media screen and (max-width: 980px) {
+  #header img {
+    margin-left: 30px;
+  }
+}
+#header h1 {
+  float: left;
+  margin-left: 6px;
+  font-family: "Pacifico";
+  font-size: 26px;
+  line-height: 100px;
+  letter-spacing: 3px;
+  /*小于980的样式*/
+}
+@media screen and (max-width: 980px) {
+  #header h1 {
+    font-weight: 400;
+  }
+}
+#header .btn {
+  float: right;
+  width: 50px;
+  height: 50px;
+  margin: 20px 80px 0 0;
+  border-radius: 50%;
+  box-shadow: -1px 1px 6px #999;
+  font-size: 26px;
+  text-align: center;
+  line-height: 50px;
+  cursor: pointer;
+  background-color: #fff;
+  transition: box-shadow 0.3s;
+  /*小于980的样式*/
+  /*大于1340的样式*/
+}
+#header .btn:hover {
+  box-shadow: -4px 4px 6px #bbb;
+}
+@media screen and (max-width: 980px) {
+  #header .btn {
+    box-shadow: 0 0 0 transparent;
+    margin-right: 40px;
+  }
+  #header .btn:hover {
+    box-shadow: 0 0 0 transparent;
+  }
+}
+@media screen and (min-width: 1340px) {
+  #header .btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 63px;
+    height: 63px;
+    margin: 0;
+    line-height: 63px;
+  }
+}
+/*媒体查询  本来是需要这么写的，但是less的选择器结构写到这里来很麻烦，所以我们采用less提供的方式去写媒体查询*/
+/*end header*/
+/*main start*/
+#main {
+  display: flex;
+  width: 100%;
+  /*左边m-left的样式*/
+  /*中间m-center的样式*/
+  /*右侧m-right的样式*/
+  /*小于980的样式*/
+}
+#main .m-left {
+  width: 290px;
+  height: 525px;
+  margin-left: 22px;
+  box-shadow: -5px 0 15px #bbb;
+  /*小于980的样式*/
+}
+#main .m-left .m-1-personal {
+  box-sizing: border-box;
+  width: 100%;
+  height: 395px;
+  padding-top: 30px;
+  background-color: #bfe2e6;
+  /*照片*/
+  /*名字*/
+  /*职业*/
+  /*联系地址*/
+}
+#main .m-left .m-1-personal .photo {
+  position: relative;
+  width: 195px;
+  height: 195px;
+  border-radius: 50%;
+  margin: 0 auto;
+  background: url(../img/personal/5-1.png) center top / cover;
+  opacity: 0.8;
+}
+#main .m-left .m-1-personal .photo img {
+  position: absolute;
+}
+#main .m-left .m-1-personal .photo img.img1 {
+  top: 54px;
+  left: 53px;
+  transform: translateY(-50px) rotate(15deg);
+  transform-origin: left top;
+  opacity: 0;
+}
+#main .m-left .m-1-personal .photo img.img2 {
+  top: 144px;
+  left: 56px;
+  transform: scale(1.3);
+  opacity: 0;
+}
+#main .m-left .m-1-personal .photo img.img3 {
+  top: 50px;
+  left: -65px;
+  transform: translate(-20px, -10px) rotate(80deg) scale(0.6);
+  transform-origin: right center;
+  opacity: 0;
+}
+#main .m-left .m-1-personal .photo:hover img {
+  transition: 0.3s;
+}
+#main .m-left .m-1-personal .photo:hover img.img1 {
+  top: 54px;
+  left: 46px;
+  transform: translate(-2px, 5px) rotate(15deg) scale(0.9);
+  opacity: 1;
+}
+#main .m-left .m-1-personal .photo:hover img.img2 {
+  top: 144px;
+  left: 56px;
+  transform: scale(1);
+  opacity: 1;
+}
+#main .m-left .m-1-personal .photo:hover img.img3 {
+  top: 77px;
+  left: -51px;
+  transform: translate(0px, 0px) rotate(0deg) scale(0.5);
+  transform-origin: right center;
+  opacity: 1;
+}
+#main .m-left .m-1-personal .name {
+  font-size: 25px;
+  font-weight: bolder;
+  text-align: center;
+  letter-spacing: 5px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+#main .m-left .m-1-personal .profession {
+  font-family: "Quicksand";
+  text-align: center;
+  color: #555;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+#main .m-left .m-1-personal .contact {
+  display: flex;
+  justify-content: center;
+  margin-top: 22px;
+}
+#main .m-left .m-1-personal .contact a {
+  display: block;
+  margin: 0 10px;
+  font-size: 20px;
+  color: #000;
+  transition: color 0.3s;
+}
+#main .m-left .m-1-personal .contact a:hover {
+  color: #777;
+}
+#main .m-left .m-1-download {
+  box-sizing: border-box;
+  width: 100%;
+  height: 130px;
+  padding-top: 42px;
+  background-color: #fff;
+}
+#main .m-left .m-1-download a {
+  display: block;
+  width: 194px;
+  height: 46px;
+  border-radius: 23px;
+  margin: 0 auto;
+  box-shadow: 0 0 0 #777;
+  font-size: 16px;
+  text-align: center;
+  line-height: 46px;
+  color: #000;
+  letter-spacing: 1px;
+  background-color: #bfe2e6;
+  transition: box-shadow 0.3s;
+}
+#main .m-left .m-1-download a:hover {
+  box-shadow: 0 2px 10px #777;
+}
+@media screen and (max-width: 980px) {
+  #main .m-left {
+    width: 100%;
+    margin: 80px 0 0;
+    box-shadow: 0 0 0 transparent;
+  }
+}
+#main .m-center {
+  flex: 1;
+  margin-left: 22px;
+  font-family: "Quicksand";
+  /*大于1200之后，margin-left变化*/
+  /* 尾巴 copy 部分 */
+  /*小于980的样式*/
+}
+@media (min-width: 1200px) {
+  #main .m-center {
+    margin-left: 35px;
+  }
+}
+#main .m-center article {
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 16px;
+  box-shadow: 0 0 4px #ddd;
+  padding: 40px 20px;
+  /*大于1200之后，左右padding要增大到40*/
+  background-color: #fff;
+  /*标题*/
+  /* 第一部分 */
+  /* 第二部分 */
+  /* 第三部分 */
+  /* 第四部分 */
+  /* 第五部分 */
+  /* 第六部分 */
+}
+@media (min-width: 1200px) {
+  #main .m-center article {
+    padding: 40px 40px;
+  }
+}
+#main .m-center article h2 {
+  margin-bottom: 40px;
+  font-size: 30px;
+  letter-spacing: 3px;
+}
+#main .m-center article:nth-child(1) {
+  /*自我介绍*/
+  /*个人信息*/
+  /*技能*/
+}
+#main .m-center article:nth-child(1) p.des {
+  padding-bottom: 35px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 35px;
+  text-indent: 2em;
+  color: #777;
+  font-size: 14px;
+  line-height: 30px;
+  letter-spacing: 4px;
+}
+#main .m-center article:nth-child(1) .info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 35px;
+  margin-bottom: 35px;
+  border-bottom: 1px solid #ddd;
+  /*personal information*/
+  /*languages*/
+}
+#main .m-center article:nth-child(1) .info .info-child {
+  width: 47%;
+}
+#main .m-center article:nth-child(1) .info .info-child h3 {
+  margin-bottom: 30px;
+  font-weight: 400;
+  font-size: 22px;
+  color: #666;
+}
+#main .m-center article:nth-child(1) .info .info-left ul li {
+  display: flex;
+  margin-bottom: 27px;
+}
+#main .m-center article:nth-child(1) .info .info-left ul li p.dt {
+  width: 40%;
+  font-weight: 700;
+}
+#main .m-center article:nth-child(1) .info .info-left ul li p.dd {
+  width: 60%;
+}
+#main .m-center article:nth-child(1) .info .info-right ul li {
+  margin-bottom: 30px;
+}
+#main .m-center article:nth-child(1) .info .info-right ul li p.lang {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+#main .m-center article:nth-child(1) .info .info-right ul li p.lang span:nth-child(1) {
+  font-size: 14px;
+}
+#main .m-center article:nth-child(1) .info .info-right ul li p.lang span:nth-child(2) {
+  font-size: 12px;
+  color: #999;
+}
+#main .m-center article:nth-child(1) .info .info-right ul li p.level {
+  display: flex;
+  justify-content: space-between;
+}
+#main .m-center article:nth-child(1) .info .info-right ul li p.level span {
+  display: block;
+  width: 14px;
+  height: 14px;
+  border: 1px solid #c0e3e7;
+  border-radius: 50%;
+}
+#main .m-center article:nth-child(1) .info .info-right ul li p.level span.active {
+  background-color: #c0e3e7;
+}
+#main .m-center article:nth-child(1) .skills {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 35px;
+  border-bottom: 1px solid #ddd;
+}
+#main .m-center article:nth-child(1) .skills .skills-child {
+  width: 47%;
+}
+#main .m-center article:nth-child(1) .skills .skills-child h3 {
+  margin-bottom: 30px;
+  font-weight: 400;
+  font-size: 22px;
+  color: #666;
+}
+#main .m-center article:nth-child(1) .skills .skills-left ul li {
+  margin-bottom: 20px;
+}
+#main .m-center article:nth-child(1) .skills .skills-left p.lang {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+#main .m-center article:nth-child(1) .skills .skills-left p.lang span:nth-child(1) {
+  font-size: 14px;
+}
+#main .m-center article:nth-child(1) .skills .skills-left p.lang span:nth-child(2) {
+  font-size: 12px;
+  color: #999;
+}
+#main .m-center article:nth-child(1) .skills .skills-left p.level {
+  width: 100%;
+  height: 5px;
+  background-color: #ececec;
+}
+#main .m-center article:nth-child(1) .skills .skills-left p.level span {
+  display: block;
+  height: 5px;
+  background-color: #bfe2e6;
+}
+#main .m-center article:nth-child(1) .skills .skills-rigth ul {
+  display: flex;
+}
+#main .m-center article:nth-child(1) .skills .skills-rigth ul li {
+  flex: 1;
+}
+#main .m-center article:nth-child(1) .skills .skills-rigth ul li div.svg {
+  position: relative;
+  width: 93px;
+  height: 93px;
+  margin: 0 auto;
+}
+#main .m-center article:nth-child(1) .skills .skills-rigth ul li div.svg span {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+  line-height: 93px;
+}
+#main .m-center article:nth-child(1) .skills .skills-rigth ul li p {
+  font-weight: 700;
+  margin-top: 16px;
+  text-align: center;
+}
+#main .m-center article:nth-child(2) ul.tab {
+  display: flex;
+  width: 100%;
+  height: 23px;
+  margin-bottom: 20px;
+}
+#main .m-center article:nth-child(2) ul.tab li {
+  padding: 0 20px;
+  line-height: 23px;
+  font-size: 18px;
+  font-weight: 700;
+  opacity: 0.5;
+  cursor: pointer;
+}
+#main .m-center article:nth-child(2) ul.tab li.active {
+  opacity: 1;
+}
+#main .m-center article:nth-child(2) div.img {
+  display: flex;
+  /* div.img-right{
+              //background-color:antiquewhite;
+            } */
+}
+#main .m-center article:nth-child(2) div.img div.img-child {
+  flex: 1;
+}
+#main .m-center article:nth-child(2) div.img div.img-child ul li {
+  position: relative;
+  margin-bottom: 1px;
+}
+#main .m-center article:nth-child(2) div.img div.img-child ul li img {
+  display: block;
+  width: 100%;
+}
+#main .m-center article:nth-child(2) div.img div.img-child ul li div.cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+#main .m-center article:nth-child(2) div.img div.img-child ul li div.cover a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+#main .m-center article:nth-child(2) div.img div.img-child ul li div.cover a p {
+  position: absolute;
+  font-weight: 700;
+  transition: 0.3s;
+}
+#main .m-center article:nth-child(2) div.img div.img-child ul li div.cover a p:nth-child(1) {
+  top: 20%;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 22px;
+  text-transform: uppercase;
+}
+#main .m-center article:nth-child(2) div.img div.img-child ul li div.cover a p:nth-child(2) {
+  left: 50%;
+  bottom: 20%;
+  width: 40%;
+  height: 32px;
+  border-radius: 16px;
+  text-align: center;
+  line-height: 32px;
+  transform: translateX(-50%);
+  color: #000;
+  background-color: #bfe2e6;
+}
+#main .m-center article:nth-child(2) div.img div.img-child ul li div.cover a:hover {
+  opacity: 1;
+}
+#main .m-center article:nth-child(2) div.img div.img-child ul li div.cover a:hover p:nth-child(1) {
+  top: 32%;
+}
+#main .m-center article:nth-child(2) div.img div.img-child ul li div.cover a:hover p:nth-child(2) {
+  bottom: 32%;
+}
+#main .m-center article:nth-child(2) div.img div.img-left {
+  padding-top: 0.5px;
+  margin-right: 1px;
+}
+#main .m-center article:nth-child(3) ul {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+}
+#main .m-center article:nth-child(3) ul li {
+  display: flex;
+  /*小于980的样式*/
+}
+#main .m-center article:nth-child(3) ul li div.left {
+  width: 200px;
+  /*小于980的样式*/
+}
+#main .m-center article:nth-child(3) ul li div.left p.time {
+  position: relative;
+  left: 12px;
+  top: -15px;
+  width: 160px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 14px;
+  background-color: #bfe2e6;
+  /*小于980的样式*/
+}
+#main .m-center article:nth-child(3) ul li div.left p.time::after {
+  position: absolute;
+  top: 0;
+  right: -30px;
+  content: "";
+  width: 0;
+  height: 0;
+  border: 15px solid transparent;
+  border-left-color: #bfe2e6;
+}
+@media screen and (max-width: 980px) {
+  #main .m-center article:nth-child(3) ul li div.left p.time::after {
+    left: -30px;
+    border: 15px solid transparent;
+    border-right-color: #bfe2e6;
+  }
+}
+@media screen and (max-width: 980px) {
+  #main .m-center article:nth-child(3) ul li div.left {
+    position: absolute;
+    top: 2px;
+    left: 10px;
+  }
+}
+#main .m-center article:nth-child(3) ul li div.right {
+  box-sizing: border-box;
+  flex: 1;
+  padding-left: 20px;
+  padding-right: 40px;
+  padding-bottom: 40px;
+  border-left: 2px solid #bfe2e6;
+}
+#main .m-center article:nth-child(3) ul li div.right h3 {
+  position: relative;
+  margin-bottom: 20px;
+  margin-top: -10px;
+  font-size: 20px;
+  /*小于980的样式*/
+}
+#main .m-center article:nth-child(3) ul li div.right h3::after {
+  position: absolute;
+  top: 10px;
+  left: -23px;
+  content: "";
+  width: 4px;
+  height: 4px;
+  background-color: #000;
+}
+@media screen and (max-width: 980px) {
+  #main .m-center article:nth-child(3) ul li div.right h3 {
+    font-size: 14px;
+    padding-top: 30px;
+    margin-top: -4px;
+  }
+  #main .m-center article:nth-child(3) ul li div.right h3::after {
+    top: 0px;
+  }
+}
+#main .m-center article:nth-child(3) ul li div.right p.img {
+  display: block;
+  margin-bottom: 20px;
+}
+#main .m-center article:nth-child(3) ul li div.right p.name {
+  color: #757575;
+  margin-bottom: 20px;
+}
+#main .m-center article:nth-child(3) ul li div.right p.des {
+  color: #000;
+  letter-spacing: 1px;
+  font-size: 16px;
+  /*小于980的样式*/
+}
+@media screen and (max-width: 980px) {
+  #main .m-center article:nth-child(3) ul li div.right p.des {
+    padding-bottom: 10px;
+  }
+}
+#main .m-center article:nth-child(3) ul li:last-child div.right {
+  border-color: transparent;
+}
+@media screen and (max-width: 980px) {
+  #main .m-center article:nth-child(3) ul li {
+    position: relative;
+    display: block;
+  }
+}
+#main .m-center article:nth-child(3) ul.edu {
+  margin-top: 40px;
+  border: 0;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+#main .m-center article:nth-child(4) {
+  /*ul.cli{
+            box-sizing: border-box;
+            width: 100%;
+            padding: 0 12%;
+            font-size: 0px;
+            
+            li{
+              box-sizing: border-box;
+              display: inline-block;
+              width: 33%;
+              text-align: center;
+              padding-bottom: 20px;
+              
+              img{
+                display: block;
+              }
+            }
+          }*/
+}
+#main .m-center article:nth-child(4) ul.ref {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 60px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 30px;
+  /*小于980的样式*/
+}
+#main .m-center article:nth-child(4) ul.ref li {
+  margin-bottom: 40px;
+  border-bottom: 1px solid #ddd;
+}
+#main .m-center article:nth-child(4) ul.ref li:last-child {
+  border: 0;
+}
+#main .m-center article:nth-child(4) ul.ref li p.img {
+  float: left;
+  width: 54px;
+  height: 54px;
+  background-color: aqua;
+  border-radius: 50%;
+}
+#main .m-center article:nth-child(4) ul.ref li p.name,
+#main .m-center article:nth-child(4) ul.ref li p.work,
+#main .m-center article:nth-child(4) ul.ref li p.des {
+  padding-left: 70px;
+}
+#main .m-center article:nth-child(4) ul.ref li p.name {
+  padding-top: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+#main .m-center article:nth-child(4) ul.ref li p.work {
+  padding-top: 5px;
+  padding-bottom: 30px;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+#main .m-center article:nth-child(4) ul.ref li p.des {
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+  line-height: 20px;
+}
+#main .m-center article:nth-child(4) ul.ref li:nth-child(1) p.img {
+  background-image: url(../img/references/1.jpg);
+}
+#main .m-center article:nth-child(4) ul.ref li:nth-child(2) p.img {
+  background-image: url(../img/references/2.jpg);
+}
+#main .m-center article:nth-child(4) ul.ref li:nth-child(3) p.img {
+  background-image: url(../img/references/3.jpg);
+}
+@media screen and (max-width: 980px) {
+  #main .m-center article:nth-child(4) ul.ref {
+    padding: 0 20px;
+  }
+}
+#main .m-center article:nth-child(4) ul.cli {
+  box-sizing: border-box;
+  padding: 0 40px;
+  font-size: 0;
+  /*小于980的样式*/
+}
+#main .m-center article:nth-child(4) ul.cli li {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 33%;
+  text-align: center;
+  padding: 10px;
+}
+#main .m-center article:nth-child(4) ul.cli li img {
+  display: block;
+}
+@media screen and (max-width: 980px) {
+  #main .m-center article:nth-child(4) ul.cli {
+    padding: 0 10px;
+  }
+}
+#main .m-center article:nth-child(5) p.des {
+  line-height: 35px;
+  text-align: center;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+#main .m-center article:nth-child(5) a.btn {
+  display: block;
+  width: 240px;
+  height: 50px;
+  border-radius: 25px;
+  margin: 20px auto 0;
+  background-color: #bfe2e6;
+  line-height: 50px;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  color: #000;
+  box-shadow: 0 0 0 #bbb;
+  transition: box-shadow 0.3s;
+}
+#main .m-center article:nth-child(5) a.btn:hover {
+  box-shadow: 0 3px 5px #bbb;
+}
+#main .m-center article:nth-child(6) div.content {
+  padding: 0 50px;
+  /*小于980的样式*/
+}
+#main .m-center article:nth-child(6) div.content p.link {
+  font-size: 0;
+}
+#main .m-center article:nth-child(6) div.content p.link a {
+  font-size: 24px;
+  color: #000;
+  margin: 0 10px;
+}
+#main .m-center article:nth-child(6) div.content p.work {
+  font-weight: 700;
+  font-size: 22px;
+  margin-top: 50px;
+}
+#main .m-center article:nth-child(6) div.content form p {
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+#main .m-center article:nth-child(6) div.content form input[type="text"] {
+  width: 100%;
+  height: 40px;
+  background-color: #f2f2f2;
+  border: 1px solid transparent;
+  box-shadow: 0 0 2px #bbb;
+  border-radius: 2px;
+  text-indent: 15px;
+  outline: 0;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+#main .m-center article:nth-child(6) div.content form input[type="text"]:focus {
+  box-shadow: 0 0 6px rgba(82, 168, 236, 0.6);
+  border: 1px solid rgba(82, 168, 236, 0.6);
+}
+#main .m-center article:nth-child(6) div.content form input[type="submit"] {
+  display: block;
+  width: 100px;
+  height: 40px;
+  margin: 35px 0 100px;
+  border: 0;
+  border-radius: 20px;
+  box-shadow: 0 0 0 #bbb;
+  background-color: #c0e3e7;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 2px;
+  outline: 0;
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+}
+#main .m-center article:nth-child(6) div.content form input[type="submit"]:hover {
+  box-shadow: 0 3px 5px #bbb;
+}
+#main .m-center article:nth-child(6) div.content form textarea {
+  box-sizing: border-box;
+  width: 100%;
+  height: 200px;
+  padding: 15px 15px;
+  background-color: #f2f2f2;
+  border: 1px solid transparent;
+  box-shadow: 0 0 2px #bbb;
+  border-radius: 2px;
+  outline: 0;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+#main .m-center article:nth-child(6) div.content form textarea:focus {
+  box-shadow: 0 0 5px rgba(82, 168, 236, 0.6);
+  border: 1px solid rgba(82, 168, 236, 0.6);
+}
+@media screen and (max-width: 980px) {
+  #main .m-center article:nth-child(6) div.content {
+    padding: 0 20px;
+  }
+}
+#main .m-center p.copy {
+  padding: 20px 0;
+  font-weight: 700;
+  text-align: center;
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+@media screen and (max-width: 980px) {
+  #main .m-center {
+    margin: 0;
+  }
+  #main .m-center article {
+    box-shadow: none;
+    padding: 40px;
+  }
+}
+#main .m-right {
+  width: 46px;
+  height: 500px;
+  margin: 0 10px;
+  /*小于980的样式*/
+}
+#main .m-right ul li {
+  width: 46px;
+  height: 46px;
+  margin-bottom: 30px;
+}
+#main .m-right ul li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-size: 28px;
+  line-height: 46px;
+  text-align: center;
+  color: #000;
+  opacity: 1;
+  transition: color 0.3s, opacity 0.3s;
+}
+#main .m-right ul li a:hover {
+  opacity: 0.5;
+}
+#main .m-right ul li:first-child a {
+  border-radius: 50%;
+  background: url(../img/personal/5-1.png) center top / cover;
+}
+@media screen and (max-width: 980px) {
+  #main .m-right {
+    position: absolute;
+    top: -80px;
+    left: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 80px;
+    padding-top: 17px;
+    margin: 0;
+  }
+  #main .m-right ul {
+    display: flex;
+    justify-content: center;
+  }
+  #main .m-right ul li {
+    margin: 0 20px;
+  }
+}
+@media screen and (max-width: 980px) {
+  #main {
+    display: block;
+    position: relative;
+  }
+}
+/*end main*/
