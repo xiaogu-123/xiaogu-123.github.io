@@ -180,7 +180,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-16 11:02:44" itemprop="dateModified" datetime="2021-11-16T11:02:44+08:00">2021-11-16</time>
+                <time title="修改时间：2021-11-16 11:53:30" itemprop="dateModified" datetime="2021-11-16T11:53:30+08:00">2021-11-16</time>
               </span>
 
           
@@ -198,7 +198,7 @@
 <li>各自独立, 便于复用, 易于维护</li>
 </ul>
 <h3 id="是什么？"><a href="#是什么？" class="headerlink" title="是什么？"></a>是什么？</h3><ul>
-<li>可复用的 Vue 实例对象，封装标签, 样式和JS代码</li>
+<li>可复用的 Vue 实例对象，封装标签, 样式和 JS 代码</li>
 </ul>
 <br>
 
@@ -211,7 +211,7 @@
 
 <h2 id="3-组件-基础使用"><a href="#3-组件-基础使用" class="headerlink" title="3.组件_基础使用"></a>3.组件_基础使用</h2><h3 id="使用步骤"><a href="#使用步骤" class="headerlink" title="使用步骤"></a>使用步骤</h3><ul>
 <li><ol>
-<li>封装组件  ( 一个 vue 文件就是一个组件 ) </li>
+<li>封装组件 ( 一个 vue 文件就是一个组件 )</li>
 </ol>
 </li>
 <li><ol start="2">
@@ -246,7 +246,7 @@
 </ul>
 <br>
 
-<h2 id="4-组件-scoped作用"><a href="#4-组件-scoped作用" class="headerlink" title="4.组件-scoped作用"></a>4.组件-scoped作用</h2><ul>
+<h2 id="4-组件-scoped-作用"><a href="#4-组件-scoped-作用" class="headerlink" title="4.组件-scoped 作用"></a>4.组件-scoped 作用</h2><ul>
 <li><p>作用</p>
 <ul>
 <li>让样式只在当前组件的 template 中生效</li>
@@ -256,7 +256,7 @@
 <li><p>原理</p>
 <ul>
 <li><ol>
-<li>会自动给标签添加data-v-hash值属性,</li>
+<li>会自动给标签添加 data-v-hash 值属性,</li>
 </ol>
 </li>
 <li><ol start="2">
@@ -272,10 +272,10 @@
 
 <h2 id="5-组件通信-父子互传"><a href="#5-组件通信-父子互传" class="headerlink" title="5.组件通信-父子互传"></a>5.组件通信-父子互传</h2><p>先了解一下哪个是父组件，哪个是子组件：</p>
 <blockquote>
-<p>父: 使用其他组件的vue文件</p>
+<p>父: 使用其他组件的 vue 文件</p>
 <p>子: 被引入的组件(嵌入)</p>
 </blockquote>
-<h3 id="父传子-props"><a href="#父传子-props" class="headerlink" title="父传子  - props"></a>父传子  - props</h3><ul>
+<h3 id="父传子-props"><a href="#父传子-props" class="headerlink" title="父传子 - props"></a>父传子 - props</h3><ul>
 <li><ol>
 <li>子组件中定义 props 来接收父组件传递过来的数据</li>
 </ol>
@@ -285,7 +285,7 @@
 </ol>
 </li>
 </ul>
-<h3 id="子传父-emit"><a href="#子传父-emit" class="headerlink" title="子传父  -  $emit"></a>子传父  -  $emit</h3><ul>
+<h3 id="子传父-emit"><a href="#子传父-emit" class="headerlink" title="子传父 - $emit"></a>子传父 - $emit</h3><ul>
 <li><ol>
 <li>在父组件中, 给子组件绑定自定义事件, 父组件中定义事件处理函数</li>
 </ol>
@@ -295,7 +295,7 @@
 </ol>
 </li>
 </ul>
-<h3 id=""><a href="#" class="headerlink" title=""></a><br></h3><h2 id="6-组件通信-单向数据流"><a href="#6-组件通信-单向数据流" class="headerlink" title="6.组件通信_单向数据流"></a>6.组件通信_单向数据流</h2><p>在vue中需要遵循单向数据流原则:</p>
+<h3 id=""><a href="#" class="headerlink" title=""></a><br></h3><h2 id="6-组件通信-单向数据流"><a href="#6-组件通信-单向数据流" class="headerlink" title="6.组件通信_单向数据流"></a>6.组件通信_单向数据流</h2><p>在 vue 中需要遵循单向数据流原则:</p>
 <pre><code>1. 父组件的数据发生了改变，子组件会自动跟着变
 2. 子组件不能直接修改父组件传递过来的props  props是只读的！！！
 </code></pre>
@@ -305,15 +305,13 @@
 <p><img src="https://img-blog.csdnimg.cn/e6d4bf9b8a644a378c47ef87beb7e5e3.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5bCP6JCM5paw5YWl5Zy6,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
 <br>
 
-<h2 id="7-组件通信-EventBus"><a href="#7-组件通信-EventBus" class="headerlink" title="7.组件通信-EventBus"></a>7.组件通信-EventBus</h2><h3 id="跨组件通信时使用"><a href="#跨组件通信时使用" class="headerlink" title="跨组件通信时使用"></a>跨组件通信时使用</h3><p>当2个没有引用关系的组件之间要通信传值</p>
-<h3 id="核心语法"><a href="#核心语法" class="headerlink" title="核心语法"></a>核心语法</h3><p>EventBus/index.js - 定义事件总线bus对象</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"><span class="comment">// 导出空白vue对象</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Vue()</span><br></pre></td></tr></table></figure>
-
-
+<h2 id="7-组件通信-EventBus"><a href="#7-组件通信-EventBus" class="headerlink" title="7.组件通信-EventBus"></a>7.组件通信-EventBus</h2><h3 id="跨组件通信时使用"><a href="#跨组件通信时使用" class="headerlink" title="跨组件通信时使用"></a>跨组件通信时使用</h3><p>当 2 个没有引用关系的组件之间要通信传值</p>
+<h3 id="核心语法"><a href="#核心语法" class="headerlink" title="核心语法"></a>核心语法</h3><p>EventBus/index.js - 定义事件总线 bus 对象</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">&quot;vue&quot;</span>;</span><br><span class="line"><span class="comment">// 导出空白vue对象</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Vue();</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8201d8644b9845b49b98b77cf2eddc71~tplv-k3u1fbpfcp-watermark.image" alt="image-20210416122123301.png"></p>
 <blockquote>
-<p>总结: 空的Vue对象, 只负责$on注册事件, $emit触发事件, 一定要确保$on先执行</p>
+<p>总结: 空的 Vue 对象, 只负责$on注册事件, $emit触发事件, 一定要确保$on 先执行</p>
 </blockquote>
 <br>
 
@@ -350,7 +348,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/11/14/vue%E5%9F%BA%E7%A1%80API/" class="post-title-link" itemprop="url">vue基础API</a>
+            <a href="/2020/11/14/vue%E5%9F%BA%E7%A1%80API/" class="post-title-link" itemprop="url">Vue基础API</a>
         </h2>
 
         <div class="post-meta">
@@ -367,7 +365,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-15 20:23:36" itemprop="dateModified" datetime="2021-11-15T20:23:36+08:00">2021-11-15</time>
+                <time title="修改时间：2021-11-16 11:53:19" itemprop="dateModified" datetime="2021-11-16T11:53:19+08:00">2021-11-16</time>
               </span>
 
           
@@ -840,7 +838,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/11/12/webpack/" class="post-title-link" itemprop="url">webpack</a>
+            <a href="/2020/11/12/webpack/" class="post-title-link" itemprop="url">Webpack</a>
         </h2>
 
         <div class="post-meta">
@@ -857,7 +855,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-15 20:24:07" itemprop="dateModified" datetime="2021-11-15T20:24:07+08:00">2021-11-15</time>
+                <time title="修改时间：2021-11-16 11:53:25" itemprop="dateModified" datetime="2021-11-16T11:53:25+08:00">2021-11-16</time>
               </span>
 
           
