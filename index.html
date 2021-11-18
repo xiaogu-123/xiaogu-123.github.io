@@ -149,6 +149,200 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2020/11/18/Vue%E6%8F%92%E6%A7%BD/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="祝庆军">
+      <meta itemprop="description" content="Code is my life">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小骨的个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/11/18/Vue%E6%8F%92%E6%A7%BD/" class="post-title-link" itemprop="url">Vue插槽</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-11-18 23:46:32" itemprop="dateCreated datePublished" datetime="2020-11-18T23:46:32+08:00">2020-11-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-11-19 00:53:47" itemprop="dateModified" datetime="2021-11-19T00:53:47+08:00">2021-11-19</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="vue-组件进阶"><a href="#vue-组件进阶" class="headerlink" title="vue 组件进阶"></a>vue 组件进阶</h1><h2 id="1-组件-插槽"><a href="#1-组件-插槽" class="headerlink" title="1.组件-插槽"></a>1.组件-插槽</h2><h3 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h3><p>用于实现组件的内容分发, 通过 slot 标签, 可以接收到写在组件标签内的内容</p>
+<h3 id="讲解"><a href="#讲解" class="headerlink" title="讲解"></a>讲解</h3><p>vue提供组件插槽能力, 允许开发者在封装组件时，把不确定的部分定义为插槽</p>
+<p><strong>语法口诀:</strong> </p>
+<ol>
+<li>组件内用<slot></slot>占位</li>
+<li>使用组件时<Pannel></Pannel>夹着的地方, 传入标签替换slot</li>
+</ol>
+<blockquote>
+<p>总结: 组件内容分发技术, slot占位, 使用组件时传入替换slot位置的标签</p>
+</blockquote>
+<h2 id="2-组件-插槽-默认内容"><a href="#2-组件-插槽-默认内容" class="headerlink" title="2.组件-插槽-默认内容"></a>2.组件-插槽-默认内容</h2><h3 id="目标-1"><a href="#目标-1" class="headerlink" title="目标"></a>目标</h3><p>如果外面不给传, 想给个默认显示内容</p>
+<h3 id="讲解-1"><a href="#讲解-1" class="headerlink" title="讲解"></a>讲解</h3><p>口诀: <slot>夹着内容默认显示内容, 如果不给插槽slot传东西, 则使用<slot>夹着的内容在原地显示</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;slot&gt;默认内容&lt;/slot&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><ol>
+<li><p>如何给插槽设置默认显示内容?</p>
+<p>slot标签内写好默认要显示内容</p>
+</li>
+<li><p>什么时候插槽默认内容会显示?</p>
+<p>当使用组件并未给我们传入具体标签或内容时</p>
+</li>
+</ol>
+<h2 id="3-组件-具名插槽"><a href="#3-组件-具名插槽" class="headerlink" title="3.组件-具名插槽"></a>3.组件-具名插槽</h2><h3 id="目标-2"><a href="#目标-2" class="headerlink" title="目标"></a>目标</h3><p>当一个组件内有2处以上需要外部传入标签的地方</p>
+<h3 id="讲解-2"><a href="#讲解-2" class="headerlink" title="讲解"></a>讲解</h3><p>传入的标签可以分别派发给不同的slot位置</p>
+<p>要求: v-slot一般用跟 template 标签使用 ( template 是 html5 新出标签内容模板元素, 不会渲染到页面上, 一般被 vue 解析内部标签)</p>
+<p><strong>v-slot 可以简化成 # 使用</strong></p>
+<blockquote>
+<p>v-bind可以省略成:    v-on: 可以省略成@   那么v-slot: 可以简化成#</p>
+</blockquote>
+<blockquote>
+<p>总结: slot的name属性起插槽名, 使用组件时, template配合#插槽名 传入具体标签</p>
+</blockquote>
+<h3 id="小结-1"><a href="#小结-1" class="headerlink" title="小结"></a>小结</h3><ol>
+<li><p>组件内多处不确定的标签如何做?</p>
+<p>ot占位, 给name属性起名字来区分<br>template配合v-slot:name分发要替换的标签</p>
+</li>
+<li><p>v-slot: 可以简化成什么?</p>
+<h1 id=""><a href="#" class="headerlink" title=""></a></h1></li>
+</ol>
+<h2 id="4-组件-作用域插槽"><a href="#4-组件-作用域插槽" class="headerlink" title="4.组件-作用域插槽"></a>4.组件-作用域插槽</h2><h3 id="目标-3"><a href="#目标-3" class="headerlink" title="目标"></a>目标</h3><p>子组件里值, 在给插槽赋值时在父组件环境下使用</p>
+<h3 id="讲解-3"><a href="#讲解-3" class="headerlink" title="讲解"></a>讲解</h3><p>复习: 插槽内slot中显示默认内容</p>
+<p>例子: 默认内容在子组件中, 但是父亲在给插槽传值, 想要改变插槽显示的默认内容</p>
+<p>口诀: </p>
+<ol>
+<li>子组件, 在slot上绑定属性和子组件内的值</li>
+<li>使用组件, 传入自定义标签, 用template和v-slot=”自定义变量名” </li>
+<li>scope变量名自动绑定slot上所有属性和值</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- slot标签, 自定义属性和内变量关联 --&gt;</span><br><span class="line">&lt;slot name=&quot;body&quot; :row=&quot;defaultObj&quot;&gt;&#123;&#123; defaultObj.One &#125;&#125;&lt;/slot&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      defaultObj: &#123;</span><br><span class="line">        One: &quot;无名氏&quot;,</span><br><span class="line">        Two: &quot;小传同学&quot;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;;</span><br><span class="line"> &#125;,</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">  &lt;!-- 需求: 插槽时, 使用组件内变量 --&gt;</span><br><span class="line">  &lt;!-- scope变量: &#123;row: defaultObj&#125; --&gt;</span><br><span class="line">&lt;template #body=&quot;scope&quot;&gt;</span><br><span class="line">	  //这里不传值，就是默认的 defaultObj.One 值</span><br><span class="line">      &lt;p&gt;&#123;&#123; scope.row.Two &#125;&#125;&lt;/p&gt;  </span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>总结: 组件内变量绑定在slot上, 然后使用组件v-slot=”变量”  变量上就会绑定slot身上属性和值</p>
+</blockquote>
+<h3 id="小结-2"><a href="#小结-2" class="headerlink" title="小结"></a>小结</h3><ol>
+<li><p>作用域插槽什么时候使用?</p>
+<p>使用组件插槽技术时, 需要用到子组件内变量</p>
+</li>
+<li><p>作用域插槽使用口诀?</p>
+<p>子组件在 slot 身上添加属性和子组件的值<br>使用组件处 template 配合 v-slot=“变量名”（收集 slot 身上的所有属性和值）</p>
+</li>
+</ol>
+<h2 id="5-自定义指令-注册"><a href="#5-自定义指令-注册" class="headerlink" title="5.自定义指令-注册"></a>5.自定义指令-注册</h2><ul>
+<li><p><strong>全局</strong></p>
+<p>在main.js用 Vue.directive()方法来进行注册, 以后随便哪个.vue文件里都可以直接用v-fofo指令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 全局指令 - 到处&quot;直接&quot;使用</span><br><span class="line">Vue.directive(&quot;fofo&quot;, &#123;</span><br><span class="line">  	inserted(el) &#123;</span><br><span class="line">    	el.focus() // 触发标签的事件方法</span><br><span class="line">  	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>局部</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">directives: &#123;</span><br><span class="line">	(名字可以随便起-规范即可)</span><br><span class="line">	focus: &#123;</span><br><span class="line">            inserted(el)&#123;</span><br><span class="line">            	//创建 &quot;自定义指令&quot;, 让输入框自动聚焦</span><br><span class="line">            	el.focus() </span><br><span class="line">            &#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<blockquote>
+<p>总结: 全局注册自定义指令, 哪里都能用, 局部注册, 只能在当前vue文件里用</p>
+</blockquote>
+<blockquote>
+<p>在标签上使用自定义指令  v-指令名</p>
+</blockquote>
+<h3 id="v-model"><a href="#v-model" class="headerlink" title="v-model"></a>v-model</h3><ul>
+<li>:value=”vue 变量”</li>
+<li>@input=”形参 =&gt; vue 变量 = 形参”</li>
+</ul>
+<h3 id="组件进阶"><a href="#组件进阶" class="headerlink" title="组件进阶"></a>组件进阶</h3><ul>
+<li><p>ref 与$refs</p>
+<ul>
+<li><p>ref</p>
+<ul>
+<li><p>作用：给标签或者组件添加一个标记（引用）</p>
+<ul>
+<li><pre><code class="vue">&lt;div ref=&quot;a&quot;&gt;
+</code></pre>
+</li>
+<li><demo ref="b"></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>this.$refs</p>
+<ul>
+<li><p>作用：获取当前组件中所有的 ref 引用</p>
+<ul>
+<li>this.$refs.a</li>
+<li>this.$refs.b</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>$nextTick</p>
+<ul>
+<li><ol>
+<li>现象：数据发生改变，DOM 会发生更新，但是是异步的</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>问题：修改完了数据后，无法立即操作 DOM</li>
+</ol>
+</li>
+<li><ol start="3">
+<li>this.$nextTick</li>
+</ol>
+<ul>
+<li>作用：等待 DOM 更新后，回调函数会立即执行</li>
+<li>this.$nextTick(function(){})</li>
+<li>this.$nextTick().then(() =&gt; {})</li>
+<li>await this.$nextTick()</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://example.com/2020/11/17/Vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -180,7 +374,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-18 08:40:34" itemprop="dateModified" datetime="2021-11-18T08:40:34+08:00">2021-11-18</time>
+                <time title="修改时间：2021-11-19 00:25:05" itemprop="dateModified" datetime="2021-11-19T00:25:05+08:00">2021-11-19</time>
               </span>
 
           
@@ -194,15 +388,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="1-Vue-生命周期"><a href="#1-Vue-生命周期" class="headerlink" title="1.Vue-生命周期"></a>1.Vue-生命周期</h2><h3 id="人的生命周期"><a href="#人的生命周期" class="headerlink" title="人的生命周期"></a>人的生命周期</h3><blockquote>
+          <h2 id="Vue-生命周期"><a href="#Vue-生命周期" class="headerlink" title="Vue-生命周期"></a>Vue-生命周期</h2><h3 id="人的生命周期"><a href="#人的生命周期" class="headerlink" title="人的生命周期"></a>人的生命周期</h3><blockquote>
 <p>一组件从 创建 到 销毁 的整个过程就是生命周期</p>
 </blockquote>
 <p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0a01197f41c545a7b82430089b088718~tplv-k3u1fbpfcp-watermark.image" alt="image-20210111193143574.png"></p>
-<h3 id="Vue的生命周期"><a href="#Vue的生命周期" class="headerlink" title="Vue的生命周期"></a>Vue的生命周期</h3><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/33a0faced3ad4c7ca120fdba8b061d85~tplv-k3u1fbpfcp-watermark.image" alt="image-20210511152835915.png"></p>
-<h2 id="2-Vue-钩子函数"><a href="#2-Vue-钩子函数" class="headerlink" title="2.Vue-钩子函数"></a>2.Vue-钩子函数</h2><h3 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h3><p> <strong>Vue</strong> 框架内置函数，随着组件的生命周期阶段，自动执行</p>
+<h3 id="Vue-的生命周期"><a href="#Vue-的生命周期" class="headerlink" title="Vue 的生命周期"></a>Vue 的生命周期</h3><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/33a0faced3ad4c7ca120fdba8b061d85~tplv-k3u1fbpfcp-watermark.image" alt="image-20210511152835915.png"></p>
+<h2 id="2-Vue-钩子函数"><a href="#2-Vue-钩子函数" class="headerlink" title="2.Vue-钩子函数"></a>2.Vue-钩子函数</h2><h3 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h3><p><strong>Vue</strong> 框架内置函数，随着组件的生命周期阶段，自动执行</p>
 <h3 id="讲解"><a href="#讲解" class="headerlink" title="讲解"></a>讲解</h3><p>作用: 特定的时间点，执行特定的操作</p>
-<p>场景: 组件创建完毕后，可以在created 生命周期函数中发起Ajax 请求，从而初始化 data 数据</p>
-<p>分类: 4大阶段8个方法</p>
+<p>场景: 组件创建完毕后，可以在 created 生命周期函数中发起 Ajax 请求，从而初始化 data 数据</p>
+<p>分类: 4 大阶段 8 个方法</p>
 <ul>
 <li>初始化</li>
 <li>挂载</li>
@@ -241,34 +435,42 @@
 <p><a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/instance.html#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%9B%BE%E7%A4%BA">官网文档</a></p>
 <p>下图展示了实例的生命周期。你不需要立马弄明白所有的东西，不过随着你的不断学习和使用，它的参考价值会越来越高。</p>
 <p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/81147a22f452472e947d0f27350b620e~tplv-k3u1fbpfcp-watermark.image" alt="Day03.png"></p>
-<h2 id="3-Vue-初始化阶段"><a href="#3-Vue-初始化阶段" class="headerlink" title="3.Vue-初始化阶段"></a>3.Vue-初始化阶段</h2><h2 id="4-Vue-挂载阶段"><a href="#4-Vue-挂载阶段" class="headerlink" title="4.Vue-挂载阶段"></a>4.Vue-挂载阶段</h2><h2 id="5-Vue-更新阶段"><a href="#5-Vue-更新阶段" class="headerlink" title="5.Vue-更新阶段"></a>5.Vue-更新阶段</h2><h2 id="6-Vue-销毁阶段"><a href="#6-Vue-销毁阶段" class="headerlink" title="6.Vue-销毁阶段"></a>6.Vue-销毁阶段</h2><h2 id="7-axios-基本使用"><a href="#7-axios-基本使用" class="headerlink" title="7.axios-基本使用"></a>7.axios-基本使用</h2><h3 id="目标-1"><a href="#目标-1" class="headerlink" title="目标"></a>目标</h3><p>了解什么是axios, 以及如何使用</p>
-<h3 id="讲解-1"><a href="#讲解-1" class="headerlink" title="讲解"></a>讲解</h3><p><a target="_blank" rel="noopener" href="http://www.axios-js.com/">axios文档</a></p>
+<h2 id="3-Vue-初始化阶段"><a href="#3-Vue-初始化阶段" class="headerlink" title="3.Vue-初始化阶段"></a>3.Vue-初始化阶段</h2><p>beforeCreate</p>
+<p>create - 在此处访问 data 和 methods 等</p>
+<h2 id="4-Vue-挂载阶段"><a href="#4-Vue-挂载阶段" class="headerlink" title="4.Vue-挂载阶段"></a>4.Vue-挂载阶段</h2><p>beforeMount</p>
+<p>mount - 在此处获取真实 ＤＯＭ 元素</p>
+<h2 id="5-Vue-更新阶段"><a href="#5-Vue-更新阶段" class="headerlink" title="5.Vue-更新阶段"></a>5.Vue-更新阶段</h2><p>beforeUpdate</p>
+<p>updated - 在此处获取更新后的真实 DOM 元素</p>
+<h2 id="6-Vue-销毁阶段"><a href="#6-Vue-销毁阶段" class="headerlink" title="6.Vue-销毁阶段"></a>6.Vue-销毁阶段</h2><p>beforeDestroy</p>
+<p>destoryed - 一般用于清除定时器和全局事件</p>
+<h2 id="7-axios-基本使用"><a href="#7-axios-基本使用" class="headerlink" title="7.axios-基本使用"></a>7.axios-基本使用</h2><h3 id="目标-1"><a href="#目标-1" class="headerlink" title="目标"></a>目标</h3><p>了解什么是 axios, 以及如何使用</p>
+<h3 id="讲解-1"><a href="#讲解-1" class="headerlink" title="讲解"></a>讲解</h3><p><a target="_blank" rel="noopener" href="http://www.axios-js.com/">axios 文档</a></p>
 <p>特点</p>
 <ul>
-<li>支持客户端发送Ajax请求</li>
-<li>支持服务端Node.js发送请求</li>
-<li>支持Promise相关用法</li>
+<li>支持客户端发送 Ajax 请求</li>
+<li>支持服务端 Node.js 发送请求</li>
+<li>支持 Promise 相关用法</li>
 <li>支持请求和响应的拦截器功能</li>
-<li>自动转换JSON数据</li>
-<li>axios 底层还是原生js实现, 内部通过Promise封装的</li>
+<li>自动转换 JSON 数据</li>
+<li>axios 底层还是原生 js 实现, 内部通过 Promise 封装的</li>
 </ul>
-<p>axios的基本使用</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">axios(&#123;</span><br><span class="line">  <span class="attr">method</span>: <span class="string">&#x27;请求方式&#x27;</span>, <span class="comment">// get post</span></span><br><span class="line">  <span class="attr">url</span>: <span class="string">&#x27;请求地址&#x27;</span>,</span><br><span class="line">  <span class="attr">data</span>: &#123;    <span class="comment">// 拼接到请求体的参数,  post请求的参数</span></span><br><span class="line">    <span class="attr">xxx</span>: xxx,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">params</span>: &#123;  <span class="comment">// 拼接到请求行的参数, get请求的参数</span></span><br><span class="line">   	<span class="attr">xxx</span>: xxx </span><br><span class="line">  &#125;</span><br><span class="line">&#125;).then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(res.data) <span class="comment">// 后台返回的结果</span></span><br><span class="line">&#125;).catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(err) <span class="comment">// 后台报错返回</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>axios 的基本使用</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">axios(&#123;</span><br><span class="line">  <span class="attr">method</span>: <span class="string">&quot;请求方式&quot;</span>, <span class="comment">// get post</span></span><br><span class="line">  <span class="attr">url</span>: <span class="string">&quot;请求地址&quot;</span>,</span><br><span class="line">  <span class="attr">data</span>: &#123;</span><br><span class="line">    <span class="comment">// 拼接到请求体的参数,  post请求的参数</span></span><br><span class="line">    <span class="attr">xxx</span>: xxx,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">params</span>: &#123;</span><br><span class="line">    <span class="comment">// 拼接到请求行的参数, get请求的参数</span></span><br><span class="line">    <span class="attr">xxx</span>: xxx,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;)</span><br><span class="line">  .then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(res.data); <span class="comment">// 后台返回的结果</span></span><br><span class="line">  &#125;)</span><br><span class="line">  .catch(<span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(err); <span class="comment">// 后台报错返回</span></span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
 
 <h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><ol>
-<li><p>什么是ajax? </p>
+<li><p>什么是 ajax?</p>
 <p>一种前端异步请求后端的技术</p>
 </li>
-<li><p>ajax原理?</p>
-<p>浏览器window接口的XMLHttpRequest</p>
+<li><p>ajax 原理?</p>
+<p>浏览器 window 接口的 XMLHttpRequest</p>
 </li>
-<li><p>axios是什么?</p>
-<p>基于原生ajax+Promise技术封装通用于前后端的请求库</p>
+<li><p>axios 是什么?</p>
+<p>基于原生 ajax+Promise 技术封装通用于前后端的请求库</p>
 </li>
 </ol>
-<h2 id="今日总结"><a href="#今日总结" class="headerlink" title="今日总结"></a>今日总结</h2><p>Vue的生命周期哪4个阶段, 哪8个方法</p>
-<p>axios是什么, 底层是什么, 具体如何使用</p>
-<p>axios返回的是什么, 如何接收结果</p>
+<h2 id="今日总结"><a href="#今日总结" class="headerlink" title="今日总结"></a>今日总结</h2><p>Vue 的生命周期哪 4 个阶段, 哪 8 个方法</p>
+<p>axios 是什么, 底层是什么, 具体如何使用</p>
+<p>axios 返回的是什么, 如何接收结果</p>
 
       
     </div>
@@ -288,7 +490,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://example.com/2020/11/15/vue%E7%BB%84%E4%BB%B6/">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2020/11/15/Vue%E7%BB%84%E4%BB%B6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -302,7 +504,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/11/15/vue%E7%BB%84%E4%BB%B6/" class="post-title-link" itemprop="url">Vue组件</a>
+            <a href="/2020/11/15/Vue%E7%BB%84%E4%BB%B6/" class="post-title-link" itemprop="url">Vue组件</a>
         </h2>
 
         <div class="post-meta">
@@ -473,7 +675,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://example.com/2020/11/14/vue%E5%9F%BA%E7%A1%80API/">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2020/11/14/Vue%E5%9F%BA%E7%A1%80API/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -487,7 +689,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/11/14/vue%E5%9F%BA%E7%A1%80API/" class="post-title-link" itemprop="url">Vue基础API</a>
+            <a href="/2020/11/14/Vue%E5%9F%BA%E7%A1%80API/" class="post-title-link" itemprop="url">Vue基础API</a>
         </h2>
 
         <div class="post-meta">
@@ -639,7 +841,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://example.com/2020/11/13/vue%E6%8C%87%E4%BB%A4/">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2020/11/13/Vue%E6%8C%87%E4%BB%A4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -653,7 +855,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/11/13/vue%E6%8C%87%E4%BB%A4/" class="post-title-link" itemprop="url">Vue指令</a>
+            <a href="/2020/11/13/Vue%E6%8C%87%E4%BB%A4/" class="post-title-link" itemprop="url">Vue指令</a>
         </h2>
 
         <div class="post-meta">
@@ -963,7 +1165,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://example.com/2020/11/12/webpack/">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2020/11/12/Webpack/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -977,7 +1179,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/11/12/webpack/" class="post-title-link" itemprop="url">Webpack</a>
+            <a href="/2020/11/12/Webpack/" class="post-title-link" itemprop="url">Webpack</a>
         </h2>
 
         <div class="post-meta">
@@ -1089,7 +1291,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
