@@ -180,7 +180,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-19 00:53:47" itemprop="dateModified" datetime="2021-11-19T00:53:47+08:00">2021-11-19</time>
+                <time title="修改时间：2021-11-19 01:00:50" itemprop="dateModified" datetime="2021-11-19T01:00:50+08:00">2021-11-19</time>
               </span>
 
           
@@ -195,59 +195,58 @@
 
       
           <h1 id="vue-组件进阶"><a href="#vue-组件进阶" class="headerlink" title="vue 组件进阶"></a>vue 组件进阶</h1><h2 id="1-组件-插槽"><a href="#1-组件-插槽" class="headerlink" title="1.组件-插槽"></a>1.组件-插槽</h2><h3 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h3><p>用于实现组件的内容分发, 通过 slot 标签, 可以接收到写在组件标签内的内容</p>
-<h3 id="讲解"><a href="#讲解" class="headerlink" title="讲解"></a>讲解</h3><p>vue提供组件插槽能力, 允许开发者在封装组件时，把不确定的部分定义为插槽</p>
-<p><strong>语法口诀:</strong> </p>
+<h3 id="讲解"><a href="#讲解" class="headerlink" title="讲解"></a>讲解</h3><p>vue 提供组件插槽能力, 允许开发者在封装组件时，把不确定的部分定义为插槽</p>
+<p><strong>语法口诀:</strong></p>
 <ol>
 <li>组件内用<slot></slot>占位</li>
-<li>使用组件时<Pannel></Pannel>夹着的地方, 传入标签替换slot</li>
+<li>使用组件时<Pannel></Pannel>夹着的地方, 传入标签替换 slot</li>
 </ol>
 <blockquote>
-<p>总结: 组件内容分发技术, slot占位, 使用组件时传入替换slot位置的标签</p>
+<p>总结: 组件内容分发技术, slot 占位, 使用组件时传入替换 slot 位置的标签</p>
 </blockquote>
 <h2 id="2-组件-插槽-默认内容"><a href="#2-组件-插槽-默认内容" class="headerlink" title="2.组件-插槽-默认内容"></a>2.组件-插槽-默认内容</h2><h3 id="目标-1"><a href="#目标-1" class="headerlink" title="目标"></a>目标</h3><p>如果外面不给传, 想给个默认显示内容</p>
-<h3 id="讲解-1"><a href="#讲解-1" class="headerlink" title="讲解"></a>讲解</h3><p>口诀: <slot>夹着内容默认显示内容, 如果不给插槽slot传东西, 则使用<slot>夹着的内容在原地显示</p>
+<h3 id="讲解-1"><a href="#讲解-1" class="headerlink" title="讲解"></a>讲解</h3><p>口诀: <slot>夹着内容默认显示内容, 如果不给插槽 slot 传东西, 则使用<slot>夹着的内容在原地显示</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;slot&gt;默认内容&lt;/slot&gt;</span><br></pre></td></tr></table></figure>
 
 <h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><ol>
 <li><p>如何给插槽设置默认显示内容?</p>
-<p>slot标签内写好默认要显示内容</p>
+<p>slot 标签内写好默认要显示内容</p>
 </li>
 <li><p>什么时候插槽默认内容会显示?</p>
 <p>当使用组件并未给我们传入具体标签或内容时</p>
 </li>
 </ol>
-<h2 id="3-组件-具名插槽"><a href="#3-组件-具名插槽" class="headerlink" title="3.组件-具名插槽"></a>3.组件-具名插槽</h2><h3 id="目标-2"><a href="#目标-2" class="headerlink" title="目标"></a>目标</h3><p>当一个组件内有2处以上需要外部传入标签的地方</p>
-<h3 id="讲解-2"><a href="#讲解-2" class="headerlink" title="讲解"></a>讲解</h3><p>传入的标签可以分别派发给不同的slot位置</p>
-<p>要求: v-slot一般用跟 template 标签使用 ( template 是 html5 新出标签内容模板元素, 不会渲染到页面上, 一般被 vue 解析内部标签)</p>
+<h2 id="3-组件-具名插槽"><a href="#3-组件-具名插槽" class="headerlink" title="3.组件-具名插槽"></a>3.组件-具名插槽</h2><h3 id="目标-2"><a href="#目标-2" class="headerlink" title="目标"></a>目标</h3><p>当一个组件内有 2 处以上需要外部传入标签的地方</p>
+<h3 id="讲解-2"><a href="#讲解-2" class="headerlink" title="讲解"></a>讲解</h3><p>传入的标签可以分别派发给不同的 slot 位置</p>
+<p>要求: v-slot 一般用跟 template 标签使用 ( template 是 html5 新出标签内容模板元素, 不会渲染到页面上, 一般被 vue 解析内部标签)</p>
 <p><strong>v-slot 可以简化成 # 使用</strong></p>
 <blockquote>
-<p>v-bind可以省略成:    v-on: 可以省略成@   那么v-slot: 可以简化成#</p>
+<p>v-bind 可以省略成: v-on: 可以省略成@ 那么 v-slot: 可以简化成#</p>
 </blockquote>
 <blockquote>
-<p>总结: slot的name属性起插槽名, 使用组件时, template配合#插槽名 传入具体标签</p>
+<p>总结: slot 的 name 属性起插槽名, 使用组件时, template 配合#插槽名 传入具体标签</p>
 </blockquote>
 <h3 id="小结-1"><a href="#小结-1" class="headerlink" title="小结"></a>小结</h3><ol>
 <li><p>组件内多处不确定的标签如何做?</p>
-<p>ot占位, 给name属性起名字来区分<br>template配合v-slot:name分发要替换的标签</p>
+<p>ot 占位, 给 name 属性起名字来区分<br>template 配合 v-slot:name 分发要替换的标签</p>
 </li>
 <li><p>v-slot: 可以简化成什么?</p>
-<h1 id=""><a href="#" class="headerlink" title=""></a></h1></li>
+<p>#号</p>
+</li>
 </ol>
 <h2 id="4-组件-作用域插槽"><a href="#4-组件-作用域插槽" class="headerlink" title="4.组件-作用域插槽"></a>4.组件-作用域插槽</h2><h3 id="目标-3"><a href="#目标-3" class="headerlink" title="目标"></a>目标</h3><p>子组件里值, 在给插槽赋值时在父组件环境下使用</p>
-<h3 id="讲解-3"><a href="#讲解-3" class="headerlink" title="讲解"></a>讲解</h3><p>复习: 插槽内slot中显示默认内容</p>
+<h3 id="讲解-3"><a href="#讲解-3" class="headerlink" title="讲解"></a>讲解</h3><p>复习: 插槽内 slot 中显示默认内容</p>
 <p>例子: 默认内容在子组件中, 但是父亲在给插槽传值, 想要改变插槽显示的默认内容</p>
-<p>口诀: </p>
+<p>口诀:</p>
 <ol>
-<li>子组件, 在slot上绑定属性和子组件内的值</li>
-<li>使用组件, 传入自定义标签, 用template和v-slot=”自定义变量名” </li>
-<li>scope变量名自动绑定slot上所有属性和值</li>
+<li>子组件, 在 slot 上绑定属性和子组件内的值</li>
+<li>使用组件, 传入自定义标签, 用 template 和 v-slot=”自定义变量名”</li>
+<li>scope 变量名自动绑定 slot 上所有属性和值</li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- slot标签, 自定义属性和内变量关联 --&gt;</span><br><span class="line">&lt;slot name=&quot;body&quot; :row=&quot;defaultObj&quot;&gt;&#123;&#123; defaultObj.One &#125;&#125;&lt;/slot&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      defaultObj: &#123;</span><br><span class="line">        One: &quot;无名氏&quot;,</span><br><span class="line">        Two: &quot;小传同学&quot;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;;</span><br><span class="line"> &#125;,</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">  &lt;!-- 需求: 插槽时, 使用组件内变量 --&gt;</span><br><span class="line">  &lt;!-- scope变量: &#123;row: defaultObj&#125; --&gt;</span><br><span class="line">&lt;template #body=&quot;scope&quot;&gt;</span><br><span class="line">	  //这里不传值，就是默认的 defaultObj.One 值</span><br><span class="line">      &lt;p&gt;&#123;&#123; scope.row.Two &#125;&#125;&lt;/p&gt;  </span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
-
-
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- slot标签, 自定义属性和内变量关联 --&gt;</span><br><span class="line">&lt;slot name=&quot;body&quot; :row=&quot;defaultObj&quot;&gt;&#123;&#123; defaultObj.One &#125;&#125;&lt;/slot&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      defaultObj: &#123;</span><br><span class="line">        One: &quot;无名氏&quot;,</span><br><span class="line">        Two: &quot;小传同学&quot;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;;</span><br><span class="line"> &#125;,</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 需求: 插槽时, 使用组件内变量 --&gt;</span><br><span class="line">&lt;!-- scope变量: &#123;row: defaultObj&#125; --&gt;</span><br><span class="line">&lt;template #body=&quot;scope&quot;&gt;</span><br><span class="line">  //这里不传值，就是默认的 defaultObj.One 值</span><br><span class="line">  &lt;p&gt;&#123;&#123; scope.row.Two &#125;&#125;&lt;/p&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
 
 <blockquote>
-<p>总结: 组件内变量绑定在slot上, 然后使用组件v-slot=”变量”  变量上就会绑定slot身上属性和值</p>
+<p>总结: 组件内变量绑定在 slot 上, 然后使用组件 v-slot=”变量” 变量上就会绑定 slot 身上属性和值</p>
 </blockquote>
 <h3 id="小结-2"><a href="#小结-2" class="headerlink" title="小结"></a>小结</h3><ol>
 <li><p>作用域插槽什么时候使用?</p>
@@ -259,16 +258,16 @@
 </ol>
 <h2 id="5-自定义指令-注册"><a href="#5-自定义指令-注册" class="headerlink" title="5.自定义指令-注册"></a>5.自定义指令-注册</h2><ul>
 <li><p><strong>全局</strong></p>
-<p>在main.js用 Vue.directive()方法来进行注册, 以后随便哪个.vue文件里都可以直接用v-fofo指令</p>
+<p>在 main.js 用 Vue.directive()方法来进行注册, 以后随便哪个.vue 文件里都可以直接用 v-fofo 指令</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 全局指令 - 到处&quot;直接&quot;使用</span><br><span class="line">Vue.directive(&quot;fofo&quot;, &#123;</span><br><span class="line">  	inserted(el) &#123;</span><br><span class="line">    	el.focus() // 触发标签的事件方法</span><br><span class="line">  	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></li>
 <li><p><strong>局部</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">directives: &#123;</span><br><span class="line">	(名字可以随便起-规范即可)</span><br><span class="line">	focus: &#123;</span><br><span class="line">            inserted(el)&#123;</span><br><span class="line">            	//创建 &quot;自定义指令&quot;, 让输入框自动聚焦</span><br><span class="line">            	el.focus() </span><br><span class="line">            &#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">directives: &#123;</span><br><span class="line">	(名字可以随便起-规范即可)</span><br><span class="line">	focus: &#123;</span><br><span class="line">            inserted(el)&#123;</span><br><span class="line">            	//创建 &quot;自定义指令&quot;, 让输入框自动聚焦</span><br><span class="line">            	el.focus()</span><br><span class="line">            &#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
 <blockquote>
-<p>总结: 全局注册自定义指令, 哪里都能用, 局部注册, 只能在当前vue文件里用</p>
+<p>总结: 全局注册自定义指令, 哪里都能用, 局部注册, 只能在当前 vue 文件里用</p>
 </blockquote>
 <blockquote>
-<p>在标签上使用自定义指令  v-指令名</p>
+<p>在标签上使用自定义指令 v-指令名</p>
 </blockquote>
 <h3 id="v-model"><a href="#v-model" class="headerlink" title="v-model"></a>v-model</h3><ul>
 <li>:value=”vue 变量”</li>
@@ -280,13 +279,11 @@
 <li><p>ref</p>
 <ul>
 <li><p>作用：给标签或者组件添加一个标记（引用）</p>
-<ul>
-<li><pre><code class="vue">&lt;div ref=&quot;a&quot;&gt;
-</code></pre>
-</li>
-<li><demo ref="b"></li>
-</ul>
-</li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div ref=&quot;a&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;demo ref=&quot;b&quot;&gt;</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 <li><p>this.$refs</p>
