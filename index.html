@@ -149,7 +149,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://example.com/2021/11/20/Vue%E8%B7%AF%E7%94%B1/">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2020/11/20/Vue%E8%B7%AF%E7%94%B1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -163,7 +163,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/11/20/Vue%E8%B7%AF%E7%94%B1/" class="post-title-link" itemprop="url">Vue路由</a>
+            <a href="/2020/11/20/Vue%E8%B7%AF%E7%94%B1/" class="post-title-link" itemprop="url">Vue路由</a>
         </h2>
 
         <div class="post-meta">
@@ -173,8 +173,15 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2021-11-20 23:20:38" itemprop="dateCreated datePublished" datetime="2021-11-20T23:20:38+08:00">2021-11-20</time>
+              <time title="创建时间：2020-11-20 23:20:38" itemprop="dateCreated datePublished" datetime="2020-11-20T23:20:38+08:00">2020-11-20</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-11-21 02:15:02" itemprop="dateModified" datetime="2021-11-21T02:15:02+08:00">2021-11-21</time>
+              </span>
 
           
 
@@ -187,7 +194,165 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          
+          <h2 id="1-路由-是什么"><a href="#1-路由-是什么" class="headerlink" title="1.路由-是什么"></a>1.路由-是什么</h2><h3 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h3><p>了解什么是路由</p>
+<h3 id="了解"><a href="#了解" class="headerlink" title="了解"></a>了解</h3><p>设备和ip的映射关系、接口和服务的映射关系、路径和组件的映射关系</p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><ol>
+<li><p>路由是什么呢?</p>
+<p>路由是一种映射关系</p>
+</li>
+<li><p>Vue中的路由是什么?</p>
+<p>路径和组件的映射关系</p>
+</li>
+</ol>
+<h2 id="2-路由-为何用"><a href="#2-路由-为何用" class="headerlink" title="2.路由-为何用"></a>2.路由-为何用</h2><h3 id="目标-1"><a href="#目标-1" class="headerlink" title="目标"></a>目标</h3><p>了解为何要学习和使用路由</p>
+<h3 id="了解-1"><a href="#了解-1" class="headerlink" title="了解"></a>了解</h3><blockquote>
+<p>目标: 在一个页面里, 切换业务场景</p>
+</blockquote>
+<p>具体使用示例: 网易云音乐 <a target="_blank" rel="noopener" href="https://music.163.com/">https://music.163.com/</a></p>
+<p>单页面应用(SPA): 所有功能在一个html页面上实现</p>
+<p>前端路由作用: 实现业务场景切换</p>
+<p>优点：</p>
+<ul>
+<li><p>整体不刷新页面，用户体验更好</p>
+</li>
+<li><p>数据传递容易, 开发效率高</p>
+</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li><p>开发成本高(需要学习专门知识)</p>
+</li>
+<li><p>首次加载会比较慢一点。不利于seo</p>
+</li>
+</ul>
+<h3 id="小结-1"><a href="#小结-1" class="headerlink" title="小结"></a>小结</h3><ol>
+<li><p>什么是单页面应用?</p>
+<p>所有的业务都在一个页面编写, 只有一个html</p>
+</li>
+<li><p>单页面应用好处?</p>
+<p>开发效率高, 用户体验好</p>
+</li>
+<li><p>单页面如何切换场景?</p>
+<p>依赖路由切换显示</p>
+</li>
+</ol>
+<h2 id="3-路由-vue-router介绍"><a href="#3-路由-vue-router介绍" class="headerlink" title="3.路由-vue-router介绍"></a>3.路由-vue-router介绍</h2><p>官网: <a target="_blank" rel="noopener" href="https://router.vuejs.org/zh/">https://router.vuejs.org/zh/</a></p>
+<p>vue-router模块包</p>
+<h2 id="4-Vue路由-组件分类"><a href="#4-Vue路由-组件分类" class="headerlink" title="4.Vue路由-组件分类"></a>4.Vue路由-组件分类</h2><h3 id="目标-2"><a href="#目标-2" class="headerlink" title="目标"></a>目标</h3><p> .vue文件分2类, 一个是页面组件, 一个是复用组件</p>
+<h3 id="讲解"><a href="#讲解" class="headerlink" title="讲解"></a>讲解</h3><p>.vue文件本质无区别, 方便大家学习和理解, 总结的一个经验</p>
+<p>src/views(或pages) 文件夹 和 src/components文件夹</p>
+<ul>
+<li>页面组件 - 页面展示 - 配合路由用</li>
+<li>复用组件 - 展示数据/常用于复用</li>
+</ul>
+<blockquote>
+<p>总结: views下的页面组件, 配合路由切换, components下的一般引入到views下的vue中复用展示数据</p>
+</blockquote>
+<h2 id="5-Vue路由-vue-router使用"><a href="#5-Vue路由-vue-router使用" class="headerlink" title="5.Vue路由-vue-router使用"></a>5.Vue路由-vue-router使用</h2><h3 id="目标-3"><a href="#目标-3" class="headerlink" title="目标"></a>目标</h3><p> 学会vue官方提供的vue-router路由系统功能模块使用</p>
+<h3 id="了解-2"><a href="#了解-2" class="headerlink" title="了解"></a>了解</h3><p><a target="_blank" rel="noopener" href="https://router.vuejs.org/zh/">vue-router文档</a></p>
+<ul>
+<li>安装</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add vue-router</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>导入路由</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> VueRouter <span class="keyword">from</span> <span class="string">&#x27;vue-router&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>使用路由插件</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在vue中，使用使用vue的插件，都需要调用Vue.use()</span></span><br><span class="line">Vue.use(VueRouter)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>创建路由规则数组</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> routes = [</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">path</span>: <span class="string">&quot;/find&quot;</span>,</span><br><span class="line">    <span class="attr">component</span>: Find</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">path</span>: <span class="string">&quot;/my&quot;</span>,</span><br><span class="line">    <span class="attr">component</span>: My</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">path</span>: <span class="string">&quot;/part&quot;</span>,</span><br><span class="line">    <span class="attr">component</span>: Part</span><br><span class="line">  &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>创建路由对象 -  传入规则</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter(&#123;</span><br><span class="line">  routes</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>关联到vue实例</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  router</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>components换成router-view</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;router-view&gt;&lt;/router-view&gt;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>总结: 下载路由模块, 编写对应规则注入到vue实例上, 使用router-view挂载点显示切换的路由</p>
+<p>总结2: 一切都围绕着hash值变化为准</p>
+</blockquote>
+<h2 id="6-Vue路由-声明式导航-跳转"><a href="#6-Vue路由-声明式导航-跳转" class="headerlink" title="6.Vue路由-声明式导航-跳转"></a>6.Vue路由-声明式导航-跳转</h2><h3 id="目标-4"><a href="#目标-4" class="headerlink" title="目标"></a>目标</h3><p>可用全局组件router-link来替代a标签</p>
+<h3 id="讲解-1"><a href="#讲解-1" class="headerlink" title="讲解"></a>讲解</h3><ol>
+<li> vue-router 提供了一个全局组件 router-link</li>
+<li> router-link 实质上最终会渲染成a链接 to属性等价于提供 href属性(to无需#)</li>
+<li> router-link 提供了声明式导航高亮的功能(自带类名)</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;div class=&quot;footer_wrap&quot;&gt;</span><br><span class="line">      &lt;router-link to=&quot;/find&quot;&gt;发现音乐&lt;/router-link&gt;</span><br><span class="line">      &lt;router-link to=&quot;/my&quot;&gt;我的音乐&lt;/router-link&gt;</span><br><span class="line">      &lt;router-link to=&quot;/part&quot;&gt;朋友&lt;/router-link&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;top&quot;&gt;</span><br><span class="line">      &lt;router-view&gt;&lt;/router-view&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;&#125;;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">/* 省略了 其他样式 */</span><br><span class="line">.footer_wrap .router-link-active&#123;</span><br><span class="line">  color: white;</span><br><span class="line">  background: black;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>总结: 链接导航, 用router-link配合to, 实现点击切换路由</p>
+</blockquote>
+<h2 id="7-Vue路由-声明式导航-传参"><a href="#7-Vue路由-声明式导航-传参" class="headerlink" title="7.Vue路由-声明式导航-传参"></a>7.Vue路由-声明式导航-传参</h2><h3 id="目标-5"><a href="#目标-5" class="headerlink" title="目标"></a>目标</h3><p>在跳转路由时, 可以给路由对应的组件内传值</p>
+<h3 id="讲解-2"><a href="#讲解-2" class="headerlink" title="讲解"></a>讲解</h3><p>在router-link上的to属性传值, 语法格式如下</p>
+<ul>
+<li><p>/path?参数名=值</p>
+</li>
+<li><p>/path/值 – 需要路由对象提前配置 path: “/path/参数名”</p>
+</li>
+</ul>
+<p>对应页面组件接收传递过来的值</p>
+<ul>
+<li><p>$route.query.参数名</p>
+</li>
+<li><p>$route.params.参数名</p>
+</li>
+</ul>
+<blockquote>
+<p>总结: </p>
+<p>?key=value   用$route.query.key 取值</p>
+<p>/值   提前在路由规则/path/:key  用$route.params.key  取值</p>
+</blockquote>
+<h2 id="8-Vue路由-重定向"><a href="#8-Vue路由-重定向" class="headerlink" title="8.Vue路由-重定向"></a>8.Vue路由-重定向</h2><h3 id="目标-6"><a href="#目标-6" class="headerlink" title="目标"></a>目标</h3><p>匹配path后, 强制切换到目标path上</p>
+<h3 id="讲解-3"><a href="#讲解-3" class="headerlink" title="讲解"></a>讲解</h3><ul>
+<li>网页打开url默认hash值是/路径</li>
+<li>redirect是设置要重定向到哪个路由路径</li>
+</ul>
+<p>例如: 网页默认打开, 匹配路由”/“, 强制切换到”/find”上</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> routes = [</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">path</span>: <span class="string">&quot;/&quot;</span>, <span class="comment">// 默认hash值路径</span></span><br><span class="line">    <span class="attr">redirect</span>: <span class="string">&quot;/find&quot;</span> <span class="comment">// 重定向到/find</span></span><br><span class="line">    <span class="comment">// 浏览器url中#后的路径被改变成/find-重新匹配数组规则</span></span><br><span class="line">  &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>总结: 强制重定向后, 还会重新来数组里匹配一次规则</p>
+</blockquote>
+<h2 id="9-Vue路由-404页面"><a href="#9-Vue路由-404页面" class="headerlink" title="9.Vue路由-404页面"></a>9.Vue路由-404页面</h2><h3 id="目标-7"><a href="#目标-7" class="headerlink" title="目标"></a>目标</h3><blockquote>
+<p>目标: 如果路由hash值, 没有和数组里规则匹配</p>
+</blockquote>
+<h3 id="讲解-4"><a href="#讲解-4" class="headerlink" title="讲解"></a>讲解</h3><p>默认给一个404页面</p>
+<p>语法: 路由最后, path匹配*(任意路径) – 前面不匹配就命中最后这个, 显示对应组件页面</p>
+<ol>
+<li><p>创建NotFound页面</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;img src=&quot;../assets/404.png&quot; alt=&quot;&quot;&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">    img&#123;</span><br><span class="line">        width: 100%;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></li>
+<li><p>在main.js - 修改路由配置</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> NotFound <span class="keyword">from</span> <span class="string">&#x27;@/views/NotFound&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> routes = [</span><br><span class="line">  <span class="comment">// ...省略了其他配置</span></span><br><span class="line">  <span class="comment">// 404在最后(规则是从前往后逐个比较path)</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">path</span>: <span class="string">&quot;*&quot;</span>,</span><br><span class="line">    <span class="attr">component</span>: NotFound</span><br><span class="line">  &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure></li>
+</ol>
+<blockquote>
+<p>总结: 如果路由未命中任何规则, 给出一个兜底的404页面</p>
+</blockquote>
+<h2 id="10-Vue路由-模式设置"><a href="#10-Vue路由-模式设置" class="headerlink" title="10.Vue路由-模式设置"></a>10.Vue路由-模式设置</h2><h3 id="目标-8"><a href="#目标-8" class="headerlink" title="目标"></a>目标</h3><p>修改路由在地址栏的模式</p>
+<h3 id="讲解-5"><a href="#讲解-5" class="headerlink" title="讲解"></a>讲解</h3><p>hash路由例如:  <a target="_blank" rel="noopener" href="http://localhost:8080/#/home">http://localhost:8080/#/home</a></p>
+<p>history路由例如: <a target="_blank" rel="noopener" href="http://localhost:8080/home">http://localhost:8080/home</a>  (以后上线需要服务器端支持, 否则找的是文件夹)</p>
+<p><a target="_blank" rel="noopener" href="https://router.vuejs.org/zh/api/#mode">模式文档</a></p>
+<p>router/index.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter(&#123;</span><br><span class="line">  routes,</span><br><span class="line">  <span class="attr">mode</span>: <span class="string">&quot;history&quot;</span> <span class="comment">// 打包上线后需要后台支持, 模式是hash</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+
       
     </div>
 
@@ -230,14 +395,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-11-18 23:46:32" itemprop="dateCreated datePublished" datetime="2020-11-18T23:46:32+08:00">2020-11-18</time>
+              <time title="创建时间：2020-11-18 20:20:38" itemprop="dateCreated datePublished" datetime="2020-11-18T20:20:38+08:00">2020-11-18</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-19 01:00:50" itemprop="dateModified" datetime="2021-11-19T01:00:50+08:00">2021-11-19</time>
+                <time title="修改时间：2021-11-21 01:57:20" itemprop="dateModified" datetime="2021-11-21T01:57:20+08:00">2021-11-21</time>
               </span>
 
           
@@ -285,7 +450,7 @@
 </blockquote>
 <h3 id="小结-1"><a href="#小结-1" class="headerlink" title="小结"></a>小结</h3><ol>
 <li><p>组件内多处不确定的标签如何做?</p>
-<p>ot 占位, 给 name 属性起名字来区分<br>template 配合 v-slot:name 分发要替换的标签</p>
+<p>slot 占位, 给 name 属性起名字来区分<br>template 配合 v-slot:name 分发要替换的标签</p>
 </li>
 <li><p>v-slot: 可以简化成什么?</p>
 <p>#号</p>
@@ -315,10 +480,10 @@
 </ol>
 <h2 id="5-自定义指令-注册"><a href="#5-自定义指令-注册" class="headerlink" title="5.自定义指令-注册"></a>5.自定义指令-注册</h2><ul>
 <li><p><strong>全局</strong></p>
-<p>在 main.js 用 Vue.directive()方法来进行注册, 以后随便哪个.vue 文件里都可以直接用 v-fofo 指令</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 全局指令 - 到处&quot;直接&quot;使用</span><br><span class="line">Vue.directive(&quot;fofo&quot;, &#123;</span><br><span class="line">  	inserted(el) &#123;</span><br><span class="line">    	el.focus() // 触发标签的事件方法</span><br><span class="line">  	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></li>
+<p>在 main.js 用 Vue.directive() 方法来进行注册, 以后随便哪个.vue 文件里都可以直接用 v-fofo 指令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// 全局指令 - 到处&quot;直接&quot;使用</span><br><span class="line">Vue.directive(&quot;fofo&quot;, &#123;</span><br><span class="line"> 	//当元素被插入到 DOM 树上时执行该函数</span><br><span class="line">  	inserted(el) &#123;</span><br><span class="line">    	el.focus() // 触发标签的事件方法</span><br><span class="line">  	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></li>
 <li><p><strong>局部</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">directives: &#123;</span><br><span class="line">	(名字可以随便起-规范即可)</span><br><span class="line">	focus: &#123;</span><br><span class="line">            inserted(el)&#123;</span><br><span class="line">            	//创建 &quot;自定义指令&quot;, 让输入框自动聚焦</span><br><span class="line">            	el.focus()</span><br><span class="line">            &#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">directives: &#123;</span><br><span class="line">	(名字可以随便起-规范即可)</span><br><span class="line">	foc: &#123;</span><br><span class="line">            inserted(el)&#123;</span><br><span class="line">            	//创建 &quot;自定义指令&quot;, 让输入框自动聚焦</span><br><span class="line">            	el.focus()</span><br><span class="line">            &#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
 <blockquote>
 <p>总结: 全局注册自定义指令, 哪里都能用, 局部注册, 只能在当前 vue 文件里用</p>
@@ -326,11 +491,24 @@
 <blockquote>
 <p>在标签上使用自定义指令 v-指令名</p>
 </blockquote>
-<h3 id="v-model"><a href="#v-model" class="headerlink" title="v-model"></a>v-model</h3><ul>
+<h2 id="6-v-model"><a href="#6-v-model" class="headerlink" title="6.v-model"></a>6.v-model</h2><ul>
 <li>:value=”vue 变量”</li>
 <li>@input=”形参 =&gt; vue 变量 = 形参”</li>
 </ul>
-<h3 id="组件进阶"><a href="#组件进阶" class="headerlink" title="组件进阶"></a>组件进阶</h3><ul>
+<h3 id="小结-3"><a href="#小结-3" class="headerlink" title="小结"></a>小结</h3><ol>
+<li><p>v-model实际上实现的是什么?</p>
+<p>向标签内的value属性赋值</p>
+<p>给标签绑定input事件, 并把收到的值, 赋予给vue变量</p>
+</li>
+</ol>
+<h2 id="7-refs-获取DOM"><a href="#7-refs-获取DOM" class="headerlink" title="7.$refs-获取DOM"></a>7.$refs-获取DOM</h2><h3 id="目标-4"><a href="#目标-4" class="headerlink" title="目标"></a>目标</h3><p>利用 ref 和 $refs 可以用于获取 dom 元素</p>
+<p>还可以获取组件对象, 调用组件里方法</p>
+<h3 id="讲解-4"><a href="#讲解-4" class="headerlink" title="讲解"></a>讲解</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">      &lt;p&gt;1. 获取原生DOM元素&lt;/p&gt;</span><br><span class="line">      &lt;h1 id=&quot;h&quot; ref=&quot;myH&quot;&gt;我是一个孤独可怜又能吃的h1&lt;/h1&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">// 目标: 获取组件对象</span><br><span class="line">// 1. 创建组件/引入组件/注册组件/使用组件</span><br><span class="line">// 2. 组件起别名ref</span><br><span class="line">// 3. 恰当时机, 获取组件对象</span><br><span class="line">export default &#123;</span><br><span class="line">    mounted()&#123;</span><br><span class="line">        console.log(document.getElementById(&quot;h&quot;)); // h1</span><br><span class="line">        console.log(this.$refs.myH); // h1</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>总结: 通过id / ref, 都可以获取原生DOM标签</p>
+</blockquote>
+<h2 id="8-nextTick使用"><a href="#8-nextTick使用" class="headerlink" title="8.$nextTick使用"></a>8.$nextTick使用</h2><ul>
 <li><p>ref 与$refs</p>
 <ul>
 <li><p>ref</p>
@@ -338,9 +516,7 @@
 <li><p>作用：给标签或者组件添加一个标记（引用）</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div ref=&quot;a&quot;&gt;</span><br></pre></td></tr></table></figure>
 
-
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;demo ref=&quot;b&quot;&gt;</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Demo ref=&quot;b&quot;&gt;</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 <li><p>this.$refs</p>
@@ -378,6 +554,24 @@
 </ul>
 </li>
 </ul>
+<h3 id="小结-4"><a href="#小结-4" class="headerlink" title="小结"></a>小结</h3><ol>
+<li><p>data改变更新DOM是同步还是异步的?</p>
+<p>异步</p>
+</li>
+<li><p>我们可以在哪里访问到更新后的DOM呢?</p>
+<p>this.$nextTick 里的函数体<br>updated 生命周期钩子函数</p>
+</li>
+</ol>
+<h2 id="今日总结"><a href="#今日总结" class="headerlink" title="今日总结"></a>今日总结</h2><ol>
+<li>组件插槽默认使用</li>
+<li>插槽默认显示的内容</li>
+<li>多个插槽时, 具名插槽如何使用</li>
+<li>作用域插槽如何使用以及目的</li>
+<li>自定义命令如何使用</li>
+<li>$refs和$nextTick的作用</li>
+<li>知道v-model的本质是什么</li>
+<li>会给自定义组件使用v-model</li>
+</ol>
 
       
     </div>
