@@ -20,17 +20,21 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="1.Vuex 是什么Vuex 是一个专为 Vue.js 应用程序开发的 状态管理模式， 采用 集中式存储 管理应用的所有组件的状态，解决多组件数据通信。 要点：  vue官方搭配，专属使用 (类似于：vue-router)，有专门的调试工具 集中式管理数据状态方案 (操作更简洁)data() &amp;#123; return &amp;#123; 数据, 状态 &amp;#125;&amp;#125; 数据变化是可预测的 (响">
+  <meta name="description" content="1. Vuex 是什么Vuex 是一个专为 Vue.js 应用程序开发的 状态管理模式， 采用 集中式存储 管理应用的所有组件的状态，解决多组件数据通信。 要点：  vue官方搭配，专属使用 (类似于：vue-router)，有专门的调试工具 集中式管理数据状态方案 (操作更简洁)data() &amp;#123; return &amp;#123; 数据, 状态 &amp;#125;&amp;#125; 数据变化是可预测的 (">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vuex">
+<meta property="og:title" content="Vuex - Vuex-map函数用法汇总">
 <meta property="og:url" content="https://example.com/2020/11/21/Vuex/index.html">
 <meta property="og:site_name" content="小骨的个人博客">
-<meta property="og:description" content="1.Vuex 是什么Vuex 是一个专为 Vue.js 应用程序开发的 状态管理模式， 采用 集中式存储 管理应用的所有组件的状态，解决多组件数据通信。 要点：  vue官方搭配，专属使用 (类似于：vue-router)，有专门的调试工具 集中式管理数据状态方案 (操作更简洁)data() &amp;#123; return &amp;#123; 数据, 状态 &amp;#125;&amp;#125; 数据变化是可预测的 (响">
+<meta property="og:description" content="1. Vuex 是什么Vuex 是一个专为 Vue.js 应用程序开发的 状态管理模式， 采用 集中式存储 管理应用的所有组件的状态，解决多组件数据通信。 要点：  vue官方搭配，专属使用 (类似于：vue-router)，有专门的调试工具 集中式管理数据状态方案 (操作更简洁)data() &amp;#123; return &amp;#123; 数据, 状态 &amp;#125;&amp;#125; 数据变化是可预测的 (">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b6fdee955afc41018ea5b779db421b20~tplv-k3u1fbpfcp-watermark.image">
 <meta property="og:image" content="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/976a218269974c65b2a9bc03f0ef2fea~tplv-k3u1fbpfcp-watermark.image">
+<meta property="og:image" content="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8c0813c8eb544f0e805ae3dbe56f344f~tplv-k3u1fbpfcp-watermark.image">
+<meta property="og:image" content="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/bf7804b17da54a3c977c481dc33f2bfe~tplv-k3u1fbpfcp-watermark.image">
+<meta property="og:image" content="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/cf6650388cdf4a00a90ddd8ae01795b0~tplv-k3u1fbpfcp-watermark.image">
+<meta property="og:image" content="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6c7e818c3539414f81a72ded5c816cda~tplv-k3u1fbpfcp-watermark.image">
 <meta property="article:published_time" content="2020-11-21T03:00:17.000Z">
-<meta property="article:modified_time" content="2021-11-22T08:39:27.032Z">
+<meta property="article:modified_time" content="2021-11-22T15:25:28.452Z">
 <meta property="article:author" content="祝庆军">
 <meta property="article:tag" content="Web,前端,node,ES6,vue,开发,程序员,技术宅">
 <meta name="twitter:card" content="summary">
@@ -49,7 +53,7 @@
   };
 </script>
 
-  <title>Vuex | 小骨的个人博客</title>
+  <title>Vuex - Vuex-map函数用法汇总 | 小骨的个人博客</title>
   
 
 
@@ -168,7 +172,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Vuex
+          Vuex - Vuex-map函数用法汇总
         </h1>
 
         <div class="post-meta">
@@ -185,7 +189,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-22 16:39:27" itemprop="dateModified" datetime="2021-11-22T16:39:27+08:00">2021-11-22</time>
+                <time title="修改时间：2021-11-22 23:25:28" itemprop="dateModified" datetime="2021-11-22T23:25:28+08:00">2021-11-22</time>
               </span>
 
           
@@ -199,7 +203,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="1-Vuex-是什么"><a href="#1-Vuex-是什么" class="headerlink" title="1.Vuex 是什么"></a>1.Vuex 是什么</h2><p><a target="_blank" rel="noopener" href="https://vuex.vuejs.org/zh/">Vuex</a> 是一个专为 Vue.js 应用程序开发的 <strong>状态管理模式</strong>， 采用 <strong>集中式存储</strong> 管理应用的所有组件的状态，解决多组件数据通信。</p>
+        <h2 id="1-Vuex-是什么"><a href="#1-Vuex-是什么" class="headerlink" title="1. Vuex 是什么"></a>1. Vuex 是什么</h2><p><a target="_blank" rel="noopener" href="https://vuex.vuejs.org/zh/">Vuex</a> 是一个专为 Vue.js 应用程序开发的 <strong>状态管理模式</strong>， 采用 <strong>集中式存储</strong> 管理应用的所有组件的状态，解决多组件数据通信。</p>
 <p>要点：</p>
 <ol>
 <li>vue官方搭配，专属使用 (类似于：vue-router)，有专门的调试工具</li>
@@ -210,7 +214,7 @@
 <p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b6fdee955afc41018ea5b779db421b20~tplv-k3u1fbpfcp-watermark.image" alt="image-20210601212946879.png"></p>
 <h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h3><p>大型项目</p>
 <h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>vuex是vue官方提供的独立于组件体系之外的，管理公共数据的工具</p>
-<h2 id="2-Vuex-学习内容"><a href="#2-Vuex-学习内容" class="headerlink" title="2.Vuex - 学习内容"></a>2.Vuex - 学习内容</h2><h3 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h3><p>了解vuex的学习内容</p>
+<h2 id="2-Vuex-学习内容"><a href="#2-Vuex-学习内容" class="headerlink" title="2. Vuex - 学习内容"></a>2. Vuex - 学习内容</h2><h3 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h3><p>了解vuex的学习内容</p>
 <h3 id="Vuex-的学习内容"><a href="#Vuex-的学习内容" class="headerlink" title="Vuex 的学习内容"></a>Vuex 的学习内容</h3><p>Vuex中有5个内容需要学习：</p>
 <ol>
 <li><strong>state</strong>： 统一定义公共数据（ 类似于data(){return {a:1, b:2，xxxxxx}}）</li>
@@ -222,7 +226,7 @@
 <p>其中最为重要的内容是state和mutations</p>
 <p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/976a218269974c65b2a9bc03f0ef2fea~tplv-k3u1fbpfcp-watermark.image" alt="image-20210601215035990.png"></p>
 <h3 id="小结-1"><a href="#小结-1" class="headerlink" title="小结"></a>小结</h3><p>五个概念：state,  mutations,  getters, actions, modules</p>
-<h2 id="3-Vuex-state-定义公共数据并在组件中使用"><a href="#3-Vuex-state-定义公共数据并在组件中使用" class="headerlink" title="3.Vuex-state 定义公共数据并在组件中使用"></a>3.Vuex-state 定义公共数据并在组件中使用</h2><h3 id="目标-1"><a href="#目标-1" class="headerlink" title="目标"></a>目标</h3><p>掌握state的使用方式  </p>
+<h2 id="3-Vuex-state-定义公共数据并在组件中使用"><a href="#3-Vuex-state-定义公共数据并在组件中使用" class="headerlink" title="3. Vuex-state 定义公共数据并在组件中使用"></a>3. Vuex-state 定义公共数据并在组件中使用</h2><h3 id="目标-1"><a href="#目标-1" class="headerlink" title="目标"></a>目标</h3><p>掌握state的使用方式  </p>
 <p>学习分三步：</p>
 <ul>
 <li>state的作用</li>
@@ -239,7 +243,7 @@
 <h3 id="使用公共数据"><a href="#使用公共数据" class="headerlink" title="使用公共数据"></a>使用公共数据</h3><p>格式：</p>
 <p><strong>在组件中</strong>，通过<code>this.$store.state.属性名</code>来访问。</p>
 <p><strong>在模板中</strong>，则可以省略<code>this</code>而直接写成： <code>&#123;&#123;$store.state.属性名&#125;&#125;</code></p>
-<h2 id="4-Vuex-辅助函数-mapState-来使用公共数据"><a href="#4-Vuex-辅助函数-mapState-来使用公共数据" class="headerlink" title="4.Vuex-辅助函数 mapState 来使用公共数据"></a>4.Vuex-辅助函数 mapState 来使用公共数据</h2><h3 id="目标-2"><a href="#目标-2" class="headerlink" title="目标"></a>目标</h3><p>掌握mapState的用法，将state中的变量映射到当前的组件中使用； </p>
+<h2 id="4-Vuex-辅助函数-mapState-来使用公共数据"><a href="#4-Vuex-辅助函数-mapState-来使用公共数据" class="headerlink" title="4. Vuex-辅助函数 mapState 来使用公共数据"></a>4. Vuex-辅助函数 mapState 来使用公共数据</h2><h3 id="目标-2"><a href="#目标-2" class="headerlink" title="目标"></a>目标</h3><p>掌握mapState的用法，将state中的变量映射到当前的组件中使用； </p>
 <h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>当访问某个数据项嵌套太深了，能不能优化一下访问的方式？</p>
 <p>用mapState把公共数据（vuex.store） 映射 到本组件内部的<strong>计算属性</strong>中</p>
 <h3 id="mapState的使用步骤"><a href="#mapState的使用步骤" class="headerlink" title="mapState的使用步骤"></a>mapState的使用步骤</h3><h4 id="映射"><a href="#映射" class="headerlink" title="映射"></a>映射</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 导入辅助函数mapState，它是在vuex中定义的一个工具函数。</span></span><br><span class="line"><span class="comment">//  es6 按需导入 import &#123; mapState &#125; from &#x27;vuex&#x27; </span></span><br><span class="line"><span class="keyword">import</span> &#123; mapState &#125; <span class="keyword">from</span> <span class="string">&#x27;vuex&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">computed</span>: &#123;</span><br><span class="line">   <span class="comment">// 说明1： ...对象 是把对象展开，合并到computed</span></span><br><span class="line">   <span class="comment">// 说明2： mapState是一个函数 </span></span><br><span class="line">   <span class="comment">//  [&#x27;数据项1&#x27;， &#x27;数据项2&#x27;]</span></span><br><span class="line">   ...mapState([<span class="string">&#x27;xxx&#x27;</span>])，</span><br><span class="line">   ...mapState(&#123;<span class="string">&#x27;新名字&#x27;</span>: <span class="string">&#x27;xxx&#x27;</span>&#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -248,10 +252,113 @@
 
 
 
+<h2 id="5-Vuex-用mutations修改公共数据"><a href="#5-Vuex-用mutations修改公共数据" class="headerlink" title="5. Vuex-用mutations修改公共数据"></a>5. Vuex-用mutations修改公共数据</h2><h3 id="目标-3"><a href="#目标-3" class="headerlink" title="目标"></a>目标</h3><p>掌握mutations的作用及格式； 能用它来修改state中的数据===修改state中的数据必须使用mutations</p>
+<p>学习分三步：</p>
+<ul>
+<li>mutations的作用</li>
+<li>mutations的语法格式</li>
+<li>案例演示并使用vue-tools验证state中的数据的变化</li>
+</ul>
+<h3 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h3><p>通过调用mutations来修改定义在state中的公共数据。</p>
+<p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8c0813c8eb544f0e805ae3dbe56f344f~tplv-k3u1fbpfcp-watermark.image" alt="image-20210601121840170.png"></p>
+<h3 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h3><p>分两个格式： 定义的格式，调用的格式   类似methods</p>
+<p><strong>定义格式</strong>： 如下</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue.store(&#123;</span><br><span class="line">  <span class="attr">state</span>:&#123;&#125;,</span><br><span class="line">  <span class="comment">// 省略其他...</span></span><br><span class="line">  mutations：&#123;</span><br><span class="line">    <span class="comment">// 每一项都是一个函数，可以声明两个形参</span></span><br><span class="line">  	mutation名<span class="number">1</span>：<span class="function"><span class="keyword">function</span>(<span class="params">state [, 载荷]</span>) </span>&#123;</span><br><span class="line">  </span><br><span class="line">    &#125;,</span><br><span class="line">    mutation名<span class="number">2</span>：<span class="function"><span class="keyword">function</span>(<span class="params">state [, 载荷]</span>) </span>&#123;</span><br><span class="line">  </span><br><span class="line">    &#125;,</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>每一项都是一个函数，可以声明两个形参：</p>
+<ul>
+<li>第一个参数是必须的，表示当前的state。在使用时不需要传入</li>
+<li>第二个参数是可选的，表示载荷，是可选的。在使用时要传入的数据</li>
+</ul>
+<p><strong>使用格式</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">this</span>.$store.commit(<span class="string">&#x27;mutation名&#x27;</span>, 实参，给第二个参数)</span><br></pre></td></tr></table></figure>
+
+<p>这里的commit是固定的方法,  要想触发mutations中的 函数  必须使用commit 来触发</p>
+<h2 id="6-Vuex-使用辅助函数mapMutations修改state中的数据"><a href="#6-Vuex-使用辅助函数mapMutations修改state中的数据" class="headerlink" title="6. Vuex-使用辅助函数mapMutations修改state中的数据"></a>6. Vuex-使用辅助函数mapMutations修改state中的数据</h2><h4 id="目标：如何使用全局mutations修改数据"><a href="#目标：如何使用全局mutations修改数据" class="headerlink" title="目标：如何使用全局mutations修改数据"></a>目标：如何使用全局mutations修改数据</h4><p>组件中使用：</p>
+<ul>
+<li><p>直接使用：<code>this.$store.commit(&#39;mutation名&#39;, 参数)</code></p>
+</li>
+<li><p>map辅助函数：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;mapMutations&#125;  <span class="keyword">from</span>  <span class="string">&#x27;vuex&#x27;</span></span><br><span class="line"><span class="attr">methods</span>: &#123; </span><br><span class="line">  ...mapMutations([<span class="string">&#x27;mutation名&#x27;</span>]), </span><br><span class="line">  ...mapMutations(&#123;<span class="string">&#x27;新名字&#x27;</span>: <span class="string">&#x27;mutation名&#x27;</span>&#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">使用：<span class="built_in">this</span>.<span class="string">&#x27;mutation名&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">PS</span>: </span><br><span class="line">methods: &#123; </span><br><span class="line">	...mapMutations([<span class="string">&#x27;setLogo&#x27;</span>]),</span><br><span class="line">  <span class="function"><span class="title">changeImg</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    	<span class="built_in">this</span>.setLogo(<span class="string">&#x27;https://www.runoob.com/wp-content/uploads/2016/02/react.png&#x27;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="7-Vuex-mutaions拓展理解"><a href="#7-Vuex-mutaions拓展理解" class="headerlink" title="7 . Vuex-mutaions拓展理解"></a>7 . Vuex-mutaions拓展理解</h2><p><code>若将vue创建 store 的时候传入 strict: true, 开启严格模式,那么任何修改state的操作，只要不经过 mutation的函数，vue就会报错</code>   </p>
+<p><strong>一般生产模式不建议开启 strict: true  比较消耗性能</strong></p>
+<p><strong>想更改state中的数据，必须得通过mutations来进行更改</strong></p>
+<ul>
+<li>问：可以传递多个数据吗？</li>
+</ul>
+<p>答：参数只能有一个：下面的写法是不对的：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.<span class="variable">$store</span>.commit(<span class="string">&#x27;setUrl&#x27;</span>, url, host) // host这个参数将无法被接收到 </span><br></pre></td></tr></table></figure>
+
+<p>如果希望传递复杂的数据，第二个参数可以是对象，例如下面的写法</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.<span class="variable">$store</span>.commit(<span class="string">&#x27;setUrl&#x27;</span>, &#123; url, host&#125; )</span><br></pre></td></tr></table></figure>
 
 
 
+<h2 id="8-Vuex-用getters的派生状态"><a href="#8-Vuex-用getters的派生状态" class="headerlink" title="8. Vuex-用getters的派生状态"></a>8. Vuex-用getters的派生状态</h2><h3 id="目标-4"><a href="#目标-4" class="headerlink" title="目标"></a>目标</h3><p>了解getters的作用； 掌握它的用法；</p>
+<p>学习分三步：</p>
+<ul>
+<li>getters的作用</li>
+<li>getters语法格式</li>
+<li>案例使用getters</li>
+</ul>
+<h3 id="作用-1"><a href="#作用-1" class="headerlink" title="作用"></a>作用</h3><p>在state中的数据的基础上，进一步对数据进行加工得到新数据。(与组件中computed一样)</p>
+<p>例如：计算总价</p>
+<h3 id="定义格式"><a href="#定义格式" class="headerlink" title="定义格式"></a>定义格式</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vuex.store(&#123;</span><br><span class="line">  <span class="comment">// 省略其他...</span></span><br><span class="line">  <span class="attr">getters</span>: &#123;</span><br><span class="line">    <span class="comment">// state 就是上边定义的公共数据state</span></span><br><span class="line">    getter的名字<span class="number">1</span>: <span class="function"><span class="keyword">function</span>(<span class="params">state</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> 要返回的值</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
+<p><strong>state 就是上边定义的公共数据state</strong></p>
+<h3 id="使用格式"><a href="#使用格式" class="headerlink" title="使用格式"></a>使用格式</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在组件中通过：<span class="string">`$store.getters.getter的名字`</span> 来访问</span><br></pre></td></tr></table></figure>
+
+<h3 id="小结-2"><a href="#小结-2" class="headerlink" title="小结"></a>小结</h3><p>它的作用是从已有公共数据项中派生出新的数据项，类似于computed</p>
+<ul>
+<li>getters的作用</li>
+<li>getters语法格式</li>
+<li>getters如何使用</li>
+</ul>
+<h2 id="9-vuex使用辅助函数mapGetters"><a href="#9-vuex使用辅助函数mapGetters" class="headerlink" title="9. vuex使用辅助函数mapGetters"></a>9. vuex使用辅助函数mapGetters</h2><h4 id="如何使用全局getters"><a href="#如何使用全局getters" class="headerlink" title="如何使用全局getters"></a>如何使用全局getters</h4><ul>
+<li><p>直接使用：<code>this.$store.getters.xxx</code></p>
+</li>
+<li><p>map辅助函数：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">computed: &#123; </span><br><span class="line">  ...mapGetters([<span class="string">&#x27;xxx&#x27;</span>]), </span><br><span class="line">  ...mapGetters(&#123;<span class="string">&#x27;新名字&#x27;</span>: <span class="string">&#x27;xxx&#x27;</span>&#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="attr">PS</span>:</span><br><span class="line">store/index.js</span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">state</span>:&#123;&#125;,</span><br><span class="line">  <span class="attr">getters</span>:&#123;</span><br><span class="line">    <span class="function"><span class="title">total</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="number">120</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123;mapGetters&#125; <span class="keyword">from</span> <span class="string">&#x27;vuex&#x27;</span></span><br><span class="line"><span class="attr">computed</span>: &#123; </span><br><span class="line">  ...mapGetters([<span class="string">&#x27;total&#x27;</span>])</span><br><span class="line">&#125;</span><br><span class="line">&lt;div&gt;&#123;&#123;total&#125;&#125;&lt;/div&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="10-Vuex-state-mutations-getters-小结"><a href="#10-Vuex-state-mutations-getters-小结" class="headerlink" title="10. Vuex-state-mutations-getters 小结"></a>10. Vuex-state-mutations-getters 小结</h2><p>vuex维护公共数据，主要有两个动作：</p>
+<ol>
+<li>定义数据: </li>
+<li>提供<strong>获取/修改</strong>数据的方法</li>
+</ol>
+<p>state用来定义数据</p>
+<p>getters用来获取数据</p>
+<p>mutations用来修改数据</p>
+<p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/bf7804b17da54a3c977c481dc33f2bfe~tplv-k3u1fbpfcp-watermark.image" alt="image-20210927114822586.png"></p>
+<h2 id="11-Vuex用actions发异步请求"><a href="#11-Vuex用actions发异步请求" class="headerlink" title="11.  Vuex用actions发异步请求"></a>11.  Vuex用actions发异步请求</h2><h3 id="目标-5"><a href="#目标-5" class="headerlink" title="目标"></a>目标</h3><p>掌握actions的使用</p>
+<p>学习分三步：</p>
+<ul>
+<li>actions的作用</li>
+<li>actions语法格式</li>
+<li>案例演示使用</li>
+</ul>
+<h3 id="作用-2"><a href="#作用-2" class="headerlink" title="作用"></a>作用</h3><p>我们可以使用Action来修改state，这一点是类似于 mutation的，不同在于：</p>
+<ul>
+<li>action中可以通过调用 mutation来修改state，而不是直接变更状态。</li>
+<li>action 可以包含<strong>任意异步</strong>(例如ajax请求)操作。</li>
+</ul>
+<h3 id="定义格式-1"><a href="#定义格式-1" class="headerlink" title="定义格式"></a>定义格式</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vuex.store(&#123;</span><br><span class="line">  <span class="comment">// 省略其他...</span></span><br><span class="line">  <span class="attr">actions</span>: &#123;</span><br><span class="line">    <span class="comment">// context对象会自动传入，它与store实例具有相同的方法和属性</span></span><br><span class="line">    action的名字: <span class="function"><span class="keyword">function</span>(<span class="params">context, 载荷</span>) </span>&#123;</span><br><span class="line">      <span class="comment">// 1. 发异步请求, 请求数据</span></span><br><span class="line">      </span><br><span class="line">      <span class="comment">// 2. commit调用mutation来修改/保存数据</span></span><br><span class="line">      </span><br><span class="line">      <span class="comment">// context.commit(&#x27;mutation名&#x27;, 载荷)</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="调用格式"><a href="#调用格式" class="headerlink" title="调用格式"></a>调用格式</h3><p>在组件中通过<code>this.$store.dispatch(&#39;actions的名字&#39;, 参数)</code>来调用action</p>
+<h3 id="小结-3"><a href="#小结-3" class="headerlink" title="小结"></a>小结</h3><p>action一般用来发异步请求，数据回来之后，在去调用mutations来保存数据</p>
+<p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/cf6650388cdf4a00a90ddd8ae01795b0~tplv-k3u1fbpfcp-watermark.image" alt="image-20210927115932890.png"></p>
+<p>将ajax请求放在actions中有两个好处：</p>
+<ol>
+<li>代码得到了进一步封装。将发ajax和保存数据到vuex绑定在一起。</li>
+<li>逻辑更通顺。如果数据需要保存在Vuex的state中，那从接口处获取数据的操作就定义在Vuex的actions中。</li>
+</ol>
+<h2 id="12-vuex-使用辅助函数mapActions"><a href="#12-vuex-使用辅助函数mapActions" class="headerlink" title="12. vuex 使用辅助函数mapActions"></a>12. vuex 使用辅助函数mapActions</h2><h4 id="如何使用全局actions"><a href="#如何使用全局actions" class="headerlink" title="如何使用全局actions"></a>如何使用全局actions</h4><ul>
+<li><p>直接使用：<code>this.$store.dispatch(&#39;action名&#39;, 参数)</code></p>
+</li>
+<li><p>map辅助函数：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">methods: &#123; </span><br><span class="line">  ...mapActions([<span class="string">&#x27;actions名&#x27;</span>]), </span><br><span class="line">  ...mapActions(&#123;<span class="string">&#x27;新名字&#x27;</span>: <span class="string">&#x27;actions名&#x27;</span>&#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="attr">PS</span>:</span><br><span class="line"><span class="keyword">import</span> &#123;mapActions&#125;   <span class="keyword">from</span>  <span class="string">&#x27;vuex&#x27;</span></span><br><span class="line"><span class="attr">methods</span>: &#123; </span><br><span class="line">  ...mapActions([<span class="string">&#x27;getBooks&#x27;</span>]), </span><br><span class="line">&#125;,</span><br><span class="line"><span class="function"><span class="title">created</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="built_in">this</span>.getBooks()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h1><h2 id="Vuex-map函数用法汇总"><a href="#Vuex-map函数用法汇总" class="headerlink" title="Vuex-map函数用法汇总"></a>Vuex-map函数用法汇总</h2><p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6c7e818c3539414f81a72ded5c816cda~tplv-k3u1fbpfcp-watermark.image" alt="image-20210602203233284.png"></p>
 
     </div>
 
@@ -329,7 +436,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Vuex-%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">1.</span> <span class="nav-text">1.Vuex 是什么</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">1.1.</span> <span class="nav-text">使用场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93"><span class="nav-number">1.2.</span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Vuex-%E5%AD%A6%E4%B9%A0%E5%86%85%E5%AE%B9"><span class="nav-number">2.</span> <span class="nav-text">2.Vuex - 学习内容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%AE%E6%A0%87"><span class="nav-number">2.1.</span> <span class="nav-text">目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vuex-%E7%9A%84%E5%AD%A6%E4%B9%A0%E5%86%85%E5%AE%B9"><span class="nav-number">2.2.</span> <span class="nav-text">Vuex 的学习内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93-1"><span class="nav-number">2.3.</span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Vuex-state-%E5%AE%9A%E4%B9%89%E5%85%AC%E5%85%B1%E6%95%B0%E6%8D%AE%E5%B9%B6%E5%9C%A8%E7%BB%84%E4%BB%B6%E4%B8%AD%E4%BD%BF%E7%94%A8"><span class="nav-number">3.</span> <span class="nav-text">3.Vuex-state 定义公共数据并在组件中使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%AE%E6%A0%87-1"><span class="nav-number">3.1.</span> <span class="nav-text">目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#state%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">3.2.</span> <span class="nav-text">state的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E5%85%AC%E5%85%B1%E6%95%B0%E6%8D%AE"><span class="nav-number">3.3.</span> <span class="nav-text">定义公共数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%85%AC%E5%85%B1%E6%95%B0%E6%8D%AE"><span class="nav-number">3.4.</span> <span class="nav-text">使用公共数据</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Vuex-%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0-mapState-%E6%9D%A5%E4%BD%BF%E7%94%A8%E5%85%AC%E5%85%B1%E6%95%B0%E6%8D%AE"><span class="nav-number">4.</span> <span class="nav-text">4.Vuex-辅助函数 mapState 来使用公共数据</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%AE%E6%A0%87-2"><span class="nav-number">4.1.</span> <span class="nav-text">目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98"><span class="nav-number">4.2.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mapState%E7%9A%84%E4%BD%BF%E7%94%A8%E6%AD%A5%E9%AA%A4"><span class="nav-number">4.3.</span> <span class="nav-text">mapState的使用步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%98%A0%E5%B0%84"><span class="nav-number">4.3.1.</span> <span class="nav-text">映射</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8"><span class="nav-number">4.3.2.</span> <span class="nav-text">使用</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Vuex-%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">1.</span> <span class="nav-text">1. Vuex 是什么</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">1.1.</span> <span class="nav-text">使用场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93"><span class="nav-number">1.2.</span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Vuex-%E5%AD%A6%E4%B9%A0%E5%86%85%E5%AE%B9"><span class="nav-number">2.</span> <span class="nav-text">2. Vuex - 学习内容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%AE%E6%A0%87"><span class="nav-number">2.1.</span> <span class="nav-text">目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vuex-%E7%9A%84%E5%AD%A6%E4%B9%A0%E5%86%85%E5%AE%B9"><span class="nav-number">2.2.</span> <span class="nav-text">Vuex 的学习内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93-1"><span class="nav-number">2.3.</span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Vuex-state-%E5%AE%9A%E4%B9%89%E5%85%AC%E5%85%B1%E6%95%B0%E6%8D%AE%E5%B9%B6%E5%9C%A8%E7%BB%84%E4%BB%B6%E4%B8%AD%E4%BD%BF%E7%94%A8"><span class="nav-number">3.</span> <span class="nav-text">3. Vuex-state 定义公共数据并在组件中使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%AE%E6%A0%87-1"><span class="nav-number">3.1.</span> <span class="nav-text">目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#state%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">3.2.</span> <span class="nav-text">state的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E5%85%AC%E5%85%B1%E6%95%B0%E6%8D%AE"><span class="nav-number">3.3.</span> <span class="nav-text">定义公共数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%85%AC%E5%85%B1%E6%95%B0%E6%8D%AE"><span class="nav-number">3.4.</span> <span class="nav-text">使用公共数据</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Vuex-%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0-mapState-%E6%9D%A5%E4%BD%BF%E7%94%A8%E5%85%AC%E5%85%B1%E6%95%B0%E6%8D%AE"><span class="nav-number">4.</span> <span class="nav-text">4. Vuex-辅助函数 mapState 来使用公共数据</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%AE%E6%A0%87-2"><span class="nav-number">4.1.</span> <span class="nav-text">目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98"><span class="nav-number">4.2.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mapState%E7%9A%84%E4%BD%BF%E7%94%A8%E6%AD%A5%E9%AA%A4"><span class="nav-number">4.3.</span> <span class="nav-text">mapState的使用步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%98%A0%E5%B0%84"><span class="nav-number">4.3.1.</span> <span class="nav-text">映射</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8"><span class="nav-number">4.3.2.</span> <span class="nav-text">使用</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-Vuex-%E7%94%A8mutations%E4%BF%AE%E6%94%B9%E5%85%AC%E5%85%B1%E6%95%B0%E6%8D%AE"><span class="nav-number">5.</span> <span class="nav-text">5. Vuex-用mutations修改公共数据</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%AE%E6%A0%87-3"><span class="nav-number">5.1.</span> <span class="nav-text">目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%9C%E7%94%A8"><span class="nav-number">5.2.</span> <span class="nav-text">作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%BC%E5%BC%8F"><span class="nav-number">5.3.</span> <span class="nav-text">格式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-Vuex-%E4%BD%BF%E7%94%A8%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0mapMutations%E4%BF%AE%E6%94%B9state%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE"><span class="nav-number">6.</span> <span class="nav-text">6. Vuex-使用辅助函数mapMutations修改state中的数据</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9B%AE%E6%A0%87%EF%BC%9A%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%85%A8%E5%B1%80mutations%E4%BF%AE%E6%94%B9%E6%95%B0%E6%8D%AE"><span class="nav-number">6.0.1.</span> <span class="nav-text">目标：如何使用全局mutations修改数据</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-Vuex-mutaions%E6%8B%93%E5%B1%95%E7%90%86%E8%A7%A3"><span class="nav-number">7.</span> <span class="nav-text">7 . Vuex-mutaions拓展理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-Vuex-%E7%94%A8getters%E7%9A%84%E6%B4%BE%E7%94%9F%E7%8A%B6%E6%80%81"><span class="nav-number">8.</span> <span class="nav-text">8. Vuex-用getters的派生状态</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%AE%E6%A0%87-4"><span class="nav-number">8.1.</span> <span class="nav-text">目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%9C%E7%94%A8-1"><span class="nav-number">8.2.</span> <span class="nav-text">作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E6%A0%BC%E5%BC%8F"><span class="nav-number">8.3.</span> <span class="nav-text">定义格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%A0%BC%E5%BC%8F"><span class="nav-number">8.4.</span> <span class="nav-text">使用格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93-2"><span class="nav-number">8.5.</span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-vuex%E4%BD%BF%E7%94%A8%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0mapGetters"><span class="nav-number">9.</span> <span class="nav-text">9. vuex使用辅助函数mapGetters</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%85%A8%E5%B1%80getters"><span class="nav-number">9.0.1.</span> <span class="nav-text">如何使用全局getters</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-Vuex-state-mutations-getters-%E5%B0%8F%E7%BB%93"><span class="nav-number">10.</span> <span class="nav-text">10. Vuex-state-mutations-getters 小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-Vuex%E7%94%A8actions%E5%8F%91%E5%BC%82%E6%AD%A5%E8%AF%B7%E6%B1%82"><span class="nav-number">11.</span> <span class="nav-text">11.  Vuex用actions发异步请求</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%AE%E6%A0%87-5"><span class="nav-number">11.1.</span> <span class="nav-text">目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%9C%E7%94%A8-2"><span class="nav-number">11.2.</span> <span class="nav-text">作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E6%A0%BC%E5%BC%8F-1"><span class="nav-number">11.3.</span> <span class="nav-text">定义格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B0%83%E7%94%A8%E6%A0%BC%E5%BC%8F"><span class="nav-number">11.4.</span> <span class="nav-text">调用格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93-3"><span class="nav-number">11.5.</span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-vuex-%E4%BD%BF%E7%94%A8%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0mapActions"><span class="nav-number">12.</span> <span class="nav-text">12. vuex 使用辅助函数mapActions</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%85%A8%E5%B1%80actions"><span class="nav-number">12.0.1.</span> <span class="nav-text">如何使用全局actions</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="nav-number"></span> <span class="nav-text">总结：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Vuex-map%E5%87%BD%E6%95%B0%E7%94%A8%E6%B3%95%E6%B1%87%E6%80%BB"><span class="nav-number">1.</span> <span class="nav-text">Vuex-map函数用法汇总</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
