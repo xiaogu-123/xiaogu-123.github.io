@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Vue组件 | 小骨的个人博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="vue 组件的使用1.组件-为何用为何学？ 各自独立, 便于复用, 易于维护  是什么？ 可复用的 Vue 实例对象，封装标签, 样式和 JS 代码    2.组件_概念组件化 ：封装的思想，把页面上 可重用的部分 封装为 组件，从而方便项目的 开发 和 维护  一个页面，可以拆分成一个个组件，一个组件就是一个整体, 每个组件可以有自己独立的 结构 样式 和 行为( html, css 和 js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue组件">
+<meta property="og:url" content="https://example.com/2020/11/15/Vue%E7%BB%84%E4%BB%B6/index.html">
+<meta property="og:site_name" content="小骨的个人博客">
+<meta property="og:description" content="vue 组件的使用1.组件-为何用为何学？ 各自独立, 便于复用, 易于维护  是什么？ 可复用的 Vue 实例对象，封装标签, 样式和 JS 代码    2.组件_概念组件化 ：封装的思想，把页面上 可重用的部分 封装为 组件，从而方便项目的 开发 和 维护  一个页面，可以拆分成一个个组件，一个组件就是一个整体, 每个组件可以有自己独立的 结构 样式 和 行为( html, css 和 js">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/534b2a92ed1c44dda5ec0a9fab5e4772~tplv-k3u1fbpfcp-watermark.image">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/e6d4bf9b8a644a378c47ef87beb7e5e3.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5bCP6JCM5paw5YWl5Zy6,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8201d8644b9845b49b98b77cf2eddc71~tplv-k3u1fbpfcp-watermark.image">
+<meta property="article:published_time" content="2020-11-15T12:14:43.000Z">
+<meta property="article:modified_time" content="2021-11-16T03:53:30.547Z">
+<meta property="article:author" content="祝庆军">
+<meta property="article:tag" content="Web,前端,node,ES6,vue,开发,程序员,技术宅">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/534b2a92ed1c44dda5ec0a9fab5e4772~tplv-k3u1fbpfcp-watermark.image">
+  
+    <link rel="alternate" href="/atom.xml" title="小骨的个人博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">小骨的个人博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Vue组件" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/11/15/Vue%E7%BB%84%E4%BB%B6/" class="article-date">
+  <time datetime="2020-11-15T12:14:43.000Z" itemprop="datePublished">2020-11-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Vue组件
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="vue-组件的使用"><a href="#vue-组件的使用" class="headerlink" title="vue 组件的使用"></a>vue 组件的使用</h1><h2 id="1-组件-为何用"><a href="#1-组件-为何用" class="headerlink" title="1.组件-为何用"></a>1.组件-为何用</h2><h3 id="为何学？"><a href="#为何学？" class="headerlink" title="为何学？"></a>为何学？</h3><ul>
+<li>各自独立, 便于复用, 易于维护</li>
+</ul>
+<h3 id="是什么？"><a href="#是什么？" class="headerlink" title="是什么？"></a>是什么？</h3><ul>
+<li>可复用的 Vue 实例对象，封装标签, 样式和 JS 代码</li>
+</ul>
+<br>
+
+<h2 id="2-组件-概念"><a href="#2-组件-概念" class="headerlink" title="2.组件_概念"></a>2.组件_概念</h2><h3 id="组件化-："><a href="#组件化-：" class="headerlink" title="组件化 ："></a><strong>组件化</strong> ：</h3><p>封装的思想，把页面上 <code>可重用的部分</code> 封装为 <code>组件</code>，从而方便项目的 开发 和 维护</p>
+<blockquote>
+<p>一个页面，可以拆分成一个个组件，一个组件就是一个整体, 每个组件可以有自己独立的 结构 样式 和 行为( html, css 和 js )</p>
+</blockquote>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/534b2a92ed1c44dda5ec0a9fab5e4772~tplv-k3u1fbpfcp-watermark.image" alt="image-20210216114452712.png"></p>
+<br>
+
+<h2 id="3-组件-基础使用"><a href="#3-组件-基础使用" class="headerlink" title="3.组件_基础使用"></a>3.组件_基础使用</h2><h3 id="使用步骤"><a href="#使用步骤" class="headerlink" title="使用步骤"></a>使用步骤</h3><ul>
+<li><ol>
+<li>封装组件 ( 一个 vue 文件就是一个组件 )</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>引入组件</li>
+</ol>
+</li>
+<li><ol start="3">
+<li>注册组件</li>
+</ol>
+<ul>
+<li><p>全局注册</p>
+<blockquote>
+<p>在 main.js 中使用 Vue.component(‘组件名’, 组件对象)</p>
+<p>注册的组件可以在任意地方使用</p>
+</blockquote>
+</li>
+<li><p>局部注册</p>
+<blockquote>
+<p>在 components 属性中注册</p>
+<p>注册的组件只能在当前组件中使用</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><ol start="4">
+<li>使用组件</li>
+</ol>
+<ul>
+<li>&lt;组件名&gt;&lt;/组件名&gt;</li>
+</ul>
+</li>
+</ul>
+<br>
+
+<h2 id="4-组件-scoped-作用"><a href="#4-组件-scoped-作用" class="headerlink" title="4.组件-scoped 作用"></a>4.组件-scoped 作用</h2><ul>
+<li><p>作用</p>
+<ul>
+<li>让样式只在当前组件的 template 中生效</li>
+<li>解决多个组件样式名相同, 冲突问题</li>
+</ul>
+</li>
+<li><p>原理</p>
+<ul>
+<li><ol>
+<li>会自动给标签添加 data-v-hash 值属性,</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>给所有 css 选择器加了一个属性选择器</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;style scoped&gt;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="5-组件通信-父子互传"><a href="#5-组件通信-父子互传" class="headerlink" title="5.组件通信-父子互传"></a>5.组件通信-父子互传</h2><p>先了解一下哪个是父组件，哪个是子组件：</p>
+<blockquote>
+<p>父: 使用其他组件的 vue 文件</p>
+<p>子: 被引入的组件(嵌入)</p>
+</blockquote>
+<h3 id="父传子-props"><a href="#父传子-props" class="headerlink" title="父传子 - props"></a>父传子 - props</h3><ul>
+<li><ol>
+<li>子组件中定义 props 来接收父组件传递过来的数据</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>父组件中, 给子组件标签上进行属性绑定传值</li>
+</ol>
+</li>
+</ul>
+<h3 id="子传父-emit"><a href="#子传父-emit" class="headerlink" title="子传父 - $emit"></a>子传父 - $emit</h3><ul>
+<li><ol>
+<li>在父组件中, 给子组件绑定自定义事件, 父组件中定义事件处理函数</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>子组件中, 在恰当的时机, 使用 this.$emit() 触发事件, 传递数据</li>
+</ol>
+</li>
+</ul>
+<h3 id=""><a href="#" class="headerlink" title=""></a><br></h3><h2 id="6-组件通信-单向数据流"><a href="#6-组件通信-单向数据流" class="headerlink" title="6.组件通信_单向数据流"></a>6.组件通信_单向数据流</h2><p>在 vue 中需要遵循单向数据流原则:</p>
+<pre><code>1. 父组件的数据发生了改变，子组件会自动跟着变
+2. 子组件不能直接修改父组件传递过来的props  props是只读的！！！
+</code></pre>
+<blockquote>
+<p><em>父组件传给子组件的是一个对象，子组件修改对象的属性，是不会报错的，**对象是引用类型, 互相更新</em></p>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/e6d4bf9b8a644a378c47ef87beb7e5e3.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5bCP6JCM5paw5YWl5Zy6,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<br>
+
+<h2 id="7-组件通信-EventBus"><a href="#7-组件通信-EventBus" class="headerlink" title="7.组件通信-EventBus"></a>7.组件通信-EventBus</h2><h3 id="跨组件通信时使用"><a href="#跨组件通信时使用" class="headerlink" title="跨组件通信时使用"></a>跨组件通信时使用</h3><p>当 2 个没有引用关系的组件之间要通信传值</p>
+<h3 id="核心语法"><a href="#核心语法" class="headerlink" title="核心语法"></a>核心语法</h3><p>EventBus/index.js - 定义事件总线 bus 对象</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">&quot;vue&quot;</span>;</span><br><span class="line"><span class="comment">// 导出空白vue对象</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Vue();</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8201d8644b9845b49b98b77cf2eddc71~tplv-k3u1fbpfcp-watermark.image" alt="image-20210416122123301.png"></p>
+<blockquote>
+<p>总结: 空的 Vue 对象, 只负责$on注册事件, $emit触发事件, 一定要确保$on 先执行</p>
+</blockquote>
+<br>
+
+<h2 id="有多学了俩-Vue-基础-API"><a href="#有多学了俩-Vue-基础-API" class="headerlink" title="有多学了俩 Vue 基础 API"></a>有多学了俩 Vue 基础 API</h2><h4 id="data"><a href="#data" class="headerlink" title="data"></a>data</h4><h4 id="methods"><a href="#methods" class="headerlink" title="methods"></a>methods</h4><h4 id="computed"><a href="#computed" class="headerlink" title="computed"></a>computed</h4><h4 id="watch"><a href="#watch" class="headerlink" title="watch"></a>watch</h4><h4 id="components"><a href="#components" class="headerlink" title="components"></a><em>components</em></h4><h4 id="props"><a href="#props" class="headerlink" title="props"></a><em>props</em></h4>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://example.com/2020/11/15/Vue%E7%BB%84%E4%BB%B6/" data-id="ckwi0cf48000758uc5taa62cf" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/11/17/Vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Vue生命周期
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/11/14/Vue%E5%9F%BA%E7%A1%80API/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Vue基础API</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%9B%A4%E8%9B%A4%E8%9B%A4%EF%BC%81%EF%BC%81%EF%BC%81/" rel="tag">蛤蛤蛤！！！</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/%E8%9B%A4%E8%9B%A4%E8%9B%A4%EF%BC%81%EF%BC%81%EF%BC%81/" style="font-size: 10px;">蛤蛤蛤！！！</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/11/21/Vuex/">Vuex - Vuex-map函数用法汇总</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/20/Vue%E8%B7%AF%E7%94%B1/">Vue路由</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/18/Vue%E6%8F%92%E6%A7%BD/">Vue插槽</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/17/Vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">Vue生命周期</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/15/Vue%E7%BB%84%E4%BB%B6/">Vue组件</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 祝庆军<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Vue指令 | 小骨的个人博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Vue  常见的一些指令1.Vue 基本概念为何学? 效率高 占有率高 薪资高  是什么? 渐进式 JavaScript 框架  渐进式  逐渐增加功能&#x2F;学习   框架和库  库  方法和属性的集合 jQuery &#x2F; bootstrap   框架  有自己的一套语法规则, 必须按照规则去写代码 Vue      怎么学 多学多用多总结 ( 了解Vue的学习方式和开发方式 )    2.脚手架-介绍">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue指令">
+<meta property="og:url" content="https://example.com/2020/11/13/Vue%E6%8C%87%E4%BB%A4/index.html">
+<meta property="og:site_name" content="小骨的个人博客">
+<meta property="og:description" content="Vue  常见的一些指令1.Vue 基本概念为何学? 效率高 占有率高 薪资高  是什么? 渐进式 JavaScript 框架  渐进式  逐渐增加功能&#x2F;学习   框架和库  库  方法和属性的集合 jQuery &#x2F; bootstrap   框架  有自己的一套语法规则, 必须按照规则去写代码 Vue      怎么学 多学多用多总结 ( 了解Vue的学习方式和开发方式 )    2.脚手架-介绍">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-11-13T08:26:25.000Z">
+<meta property="article:modified_time" content="2021-11-22T14:35:23.576Z">
+<meta property="article:author" content="祝庆军">
+<meta property="article:tag" content="Web,前端,node,ES6,vue,开发,程序员,技术宅">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="小骨的个人博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">小骨的个人博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Vue指令" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/11/13/Vue%E6%8C%87%E4%BB%A4/" class="article-date">
+  <time datetime="2020-11-13T08:26:25.000Z" itemprop="datePublished">2020-11-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Vue指令
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Vue-常见的一些指令"><a href="#Vue-常见的一些指令" class="headerlink" title="Vue  常见的一些指令"></a>Vue  常见的一些指令</h1><h2 id="1-Vue-基本概念"><a href="#1-Vue-基本概念" class="headerlink" title="1.Vue 基本概念"></a>1.Vue 基本概念</h2><h3 id="为何学"><a href="#为何学" class="headerlink" title="为何学?"></a>为何学?</h3><ul>
+<li>效率高</li>
+<li>占有率高</li>
+<li>薪资高</li>
+</ul>
+<h3 id="是什么"><a href="#是什么" class="headerlink" title="是什么?"></a>是什么?</h3><ul>
+<li><p>渐进式 JavaScript 框架</p>
+</li>
+<li><p>渐进式</p>
+<ul>
+<li>逐渐增加功能/学习</li>
+</ul>
+</li>
+<li><p>框架和库</p>
+<ul>
+<li><p>库</p>
+<ul>
+<li>方法和属性的集合</li>
+<li>jQuery / bootstrap</li>
+</ul>
+</li>
+<li><p>框架</p>
+<ul>
+<li>有自己的一套语法规则, 必须按照规则去写代码</li>
+<li>Vue</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="怎么学"><a href="#怎么学" class="headerlink" title="怎么学"></a>怎么学</h3><ul>
+<li>多学多用多总结 ( 了解Vue的学习方式和开发方式 )</li>
+</ul>
+<br>
+
+<h2 id="2-脚手架-介绍"><a href="#2-脚手架-介绍" class="headerlink" title="2.脚手架-介绍"></a>2.脚手架-介绍</h2><p>在代码里的体现, 就是一套固定标准的, 文件夹+文件+webpack配置</p>
+<br>
+
+<h2 id="3-脚手架-准备"><a href="#3-脚手架-准备" class="headerlink" title="3.脚手架-准备"></a>3.脚手架-准备</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ul>
+<li>yarn global add @vue/cli</li>
+</ul>
+<h3 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h3><ul>
+<li>vue create 项目名</li>
+</ul>
+<h3 id="认识目录结构"><a href="#认识目录结构" class="headerlink" title="认识目录结构"></a>认识目录结构</h3><ul>
+<li>main.js</li>
+<li>index.html</li>
+<li>App.vue</li>
+</ul>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><ul>
+<li><p>vue.config.js</p>
+<ul>
+<li>配置和 webpack 一样</li>
+</ul>
+</li>
+</ul>
+<h3 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h3><ul>
+<li>yarn serve</li>
+</ul>
+<br>
+
+<h2 id="4-插值表达式"><a href="#4-插值表达式" class="headerlink" title="4.插值表达式"></a>4.插值表达式</h2><h3 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h3><ul>
+<li>将表达式的结果插入到当前位置</li>
+</ul>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><ul>
+<li></li>
+</ul>
+<h2 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h2><h3 id="v-bind"><a href="#v-bind" class="headerlink" title="v-bind"></a>v-bind</h3><ul>
+<li><p>作用</p>
+<ul>
+<li>将 vue 变量动态绑定到元素属性上</li>
+<li>vue 变量改变, 元素的属性值也会随之改变</li>
+</ul>
+</li>
+<li><p>用法</p>
+<ul>
+<li><a :href="vue变量">去百度</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="v-on"><a href="#v-on" class="headerlink" title="v-on"></a>v-on</h3><ul>
+<li><p>作用</p>
+<ul>
+<li>绑定事件</li>
+</ul>
+</li>
+<li><p>用法</p>
+<ul>
+<li>&lt;a :href=”vue变量” @click=”事件处理函数”&gt;去百度</a></li>
+</ul>
+</li>
+<li><p>修饰符</p>
+<ul>
+<li><p>事件修饰符</p>
+<ul>
+<li><p>.stop</p>
+<ul>
+<li>阻止冒泡</li>
+</ul>
+</li>
+<li><p>.prevent</p>
+<ul>
+<li>阻止默认行为</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>按键修饰符</p>
+<ul>
+<li><p>只有键盘事件才可使用</p>
+</li>
+<li><p>.enter</p>
+<ul>
+<li>按下回车</li>
+</ul>
+</li>
+<li><p>.esc</p>
+<ul>
+<li>按下 esc</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="v-model"><a href="#v-model" class="headerlink" title="v-model"></a>v-model</h3><ul>
+<li><p>作用</p>
+<ul>
+<li>vue 变量和表单元素的 value 进行双向绑定</li>
+</ul>
+</li>
+<li><p>用处</p>
+<ul>
+<li>不需要程序员手动操作 DOM 获取 value 值</li>
+</ul>
+</li>
+<li><p>用法</p>
+<ul>
+<li><input v-model="vue变量" type="text" /></li>
+</ul>
+</li>
+<li><p>修饰符</p>
+<ul>
+<li><p>.number</p>
+<ul>
+<li>将值转为数字后赋给变量, parseFloat</li>
+</ul>
+</li>
+<li><p>.trim</p>
+<ul>
+<li>将值的首尾空白字符删除后赋给变量</li>
+</ul>
+</li>
+<li><p>.lazy</p>
+<ul>
+<li>当失去焦点时才赋给变量, change 事件</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="v-if"><a href="#v-if" class="headerlink" title="v-if"></a>v-if</h3><ul>
+<li><p>作用</p>
+<ul>
+<li>控制元素的显示隐藏</li>
+</ul>
+</li>
+<li><p>原理</p>
+<ul>
+<li>将元素从 DOM 树上添加/移除</li>
+</ul>
+</li>
+<li><p>用法</p>
+<ul>
+<li><input v-if="vue变量" v-model="vue变量" type="text" /></li>
+</ul>
+</li>
+</ul>
+<h3 id="v-show"><a href="#v-show" class="headerlink" title="v-show"></a>v-show</h3><ul>
+<li><p>作用</p>
+<ul>
+<li>控制元素的显示隐藏</li>
+</ul>
+</li>
+<li><p>原理</p>
+<ul>
+<li>给元素设置 display: none</li>
+</ul>
+</li>
+<li><p>用法</p>
+<ul>
+<li>同 v-if</li>
+</ul>
+</li>
+</ul>
+<h3 id="v-html-v-text"><a href="#v-html-v-text" class="headerlink" title="v-html / v-text"></a>v-html / v-text</h3><ul>
+<li><p>作</p>
+<ul>
+<li>同 innerHTML 和 innerText</li>
+</ul>
+</li>
+<li><p>用法</p>
+<ul>
+<li><p v-html="vue变量">默认值</p></li>
+</ul>
+</li>
+<li><p>注意事项</p>
+<ul>
+<li>内部的插值表达式会被覆盖</li>
+</ul>
+</li>
+</ul>
+<h3 id="v-for"><a href="#v-for" class="headerlink" title="v-for"></a>v-for</h3><ul>
+<li><p>作用</p>
+<ul>
+<li>遍历目标结构, 根据数据数量渲染标签</li>
+</ul>
+</li>
+<li><p>用法</p>
+<ul>
+<li><pre><code class="html">&lt;ul&gt;
+&lt;li v-for=&quot;(item, index) in 目标结构&quot;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+</li>
+<li><p>目标结构</p>
+<ul>
+<li>数组</li>
+<li>对象</li>
+<li>字符串</li>
+<li>数字</li>
+</ul>
+</li>
+<li><p>item/index 只能在当前 v-for 作用域中使用, 出了 li 就无法使用了</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Vue-对象核心成员"><a href="#Vue-对象核心成员" class="headerlink" title="Vue 对象核心成员"></a>Vue 对象核心成员</h2><h3 id="data"><a href="#data" class="headerlink" title="data"></a>data</h3><ul>
+<li><p>作用</p>
+<ul>
+<li>存放当前 vue 组件变量的</li>
+</ul>
+</li>
+<li><p>注意事项</p>
+<ul>
+<li>是一个函数, 在函数内部返回一个对象, 对象的属性就是变量名, 值就是变量值</li>
+<li>如果在函数中访问, 需要加 this</li>
+</ul>
+</li>
+</ul>
+<h3 id="methods"><a href="#methods" class="headerlink" title="methods"></a>methods</h3><ul>
+<li><p>作用</p>
+<ul>
+<li>存放当前 vue 组件函数的</li>
+</ul>
+</li>
+</ul>
+<p><em>XMind: ZEN - Trial Version</em></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://example.com/2020/11/13/Vue%E6%8C%87%E4%BB%A4/" data-id="ckwi0cf46000458uch21qdxo3" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/11/14/Vue%E5%9F%BA%E7%A1%80API/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Vue基础API
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/11/12/Webpack/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Webpack</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%9B%A4%E8%9B%A4%E8%9B%A4%EF%BC%81%EF%BC%81%EF%BC%81/" rel="tag">蛤蛤蛤！！！</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/%E8%9B%A4%E8%9B%A4%E8%9B%A4%EF%BC%81%EF%BC%81%EF%BC%81/" style="font-size: 10px;">蛤蛤蛤！！！</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/11/21/Vuex/">Vuex - Vuex-map函数用法汇总</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/20/Vue%E8%B7%AF%E7%94%B1/">Vue路由</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/18/Vue%E6%8F%92%E6%A7%BD/">Vue插槽</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/17/Vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">Vue生命周期</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/15/Vue%E7%BB%84%E4%BB%B6/">Vue组件</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 祝庆军<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
